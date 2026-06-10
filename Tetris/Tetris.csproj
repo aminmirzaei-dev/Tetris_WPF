@@ -142,6 +142,9 @@
     <Resource Include="Images\GithubIcon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Images\About\" />
+    <Folder Include="Images\Background\" />
+    <Folder Include="Images\Logo\" />
     <Folder Include="Messages\" />
     <Folder Include="Panels\" />
   </ItemGroup>
