@@ -110,5 +110,8 @@
   <ItemGroup>
     <Resource Include="GithubIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
