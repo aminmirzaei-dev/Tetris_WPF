@@ -75,5 +75,22 @@ namespace Tetris.Controls
 
         #endregion
 
+        #region IsDarkMode
+
+        public bool DarkMode
+        {
+            get => (bool)GetValue(DarkModeProperty);
+            set => SetValue(DarkModeProperty, value);
+        }
+
+        public static readonly DependencyProperty DarkModeProperty =
+            DependencyProperty.Register(
+                nameof(DarkMode),
+                typeof(bool),
+                typeof(BaseWindow),
+                new PropertyMetadata(false));
+
+        #endregion
+
     }
 }
