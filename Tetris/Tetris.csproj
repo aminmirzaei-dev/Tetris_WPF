@@ -102,9 +102,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="AminMirzaei.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="InstagramIcon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -112,9 +109,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
-    <Folder Include="Images\" />
     <Folder Include="Messages\" />
     <Folder Include="Windows\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AminMirzaei.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
