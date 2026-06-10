@@ -102,10 +102,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="InstagramIcon.png" />
+    <Resource Include="Images\InstagramIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="GithubIcon.png" />
+    <Resource Include="Images\GithubIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
