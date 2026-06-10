@@ -41,14 +41,14 @@ namespace Tetris.Controls
     /// Step 2)
     /// Go ahead and use your control in the XAML file.
     ///
-    ///     <MyNamespace:CaptionButton/>
+    ///     <MyNamespace:GameButton/>
     ///
     /// </summary>
-    public class CaptionButton : Control
+    public class GameButton : Control
     {
-        static CaptionButton()
+        static GameButton()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(CaptionButton), new FrameworkPropertyMetadata(typeof(CaptionButton)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(GameButton), new FrameworkPropertyMetadata(typeof(GameButton)));
         }
     }
 }

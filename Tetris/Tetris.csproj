@@ -71,10 +71,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controls\CaptionButton.cs" />
+    <Compile Include="Controls\GameButton.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -110,7 +115,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Messages\" />
-    <Folder Include="Themes\" />
     <Folder Include="Windows\" />
   </ItemGroup>
   <ItemGroup>
