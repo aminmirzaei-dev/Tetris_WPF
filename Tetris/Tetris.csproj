@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Messages\" />
+    <Folder Include="Themes\" />
     <Folder Include="Windows\" />
   </ItemGroup>
   <ItemGroup>
