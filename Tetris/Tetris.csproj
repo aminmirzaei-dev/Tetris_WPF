@@ -111,6 +111,7 @@
     <Resource Include="GithubIcon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controls\" />
     <Folder Include="Images\" />
     <Folder Include="Windows\" />
   </ItemGroup>
