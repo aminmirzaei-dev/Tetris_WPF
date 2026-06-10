@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Panels\BoardStatus.xaml.cs">
+      <DependentUpon>BoardStatus.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
@@ -88,6 +91,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Panels\BoardStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -145,7 +152,6 @@
     <Folder Include="Images\Background\" />
     <Folder Include="Images\Logo\" />
     <Folder Include="Messages\" />
-    <Folder Include="Panels\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\About\AminMirzaei.png" />
