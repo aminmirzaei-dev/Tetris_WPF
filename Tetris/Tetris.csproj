@@ -113,6 +113,7 @@
   <ItemGroup>
     <Folder Include="Controls\" />
     <Folder Include="Images\" />
+    <Folder Include="Messages\" />
     <Folder Include="Windows\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
