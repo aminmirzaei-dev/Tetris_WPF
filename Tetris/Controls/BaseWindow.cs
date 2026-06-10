@@ -57,5 +57,23 @@ namespace Tetris.Controls
             WindowStyle = WindowStyle.None;
             ResizeMode = ResizeMode.NoResize;
         }
+
+        #region CornerRadius
+
+        public CornerRadius CornerRadius
+        {
+            get => (CornerRadius)GetValue(CornerRadiusProperty);
+            set => SetValue(CornerRadiusProperty, value);
+        }
+
+        public static readonly DependencyProperty CornerRadiusProperty =
+            DependencyProperty.Register(
+                nameof(CornerRadius),
+                typeof(CornerRadius),
+                typeof(BaseWindow),
+                new PropertyMetadata(new CornerRadius(10)));
+
+        #endregion
+
     }
 }
