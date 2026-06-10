@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Messages\" />
+    <Folder Include="Panels\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\AminMirzaei.png" />
