@@ -41,14 +41,21 @@ namespace Tetris.Controls
     /// Step 2)
     /// Go ahead and use your control in the XAML file.
     ///
-    ///     <MyNamespace:CaptionButton/>
+    ///     <MyNamespace:BaseWindow/>
     ///
     /// </summary>
-    public class CaptionButton : System.Windows.Controls.Button
+    public class BaseWindow : System.Windows.Window
     {
-        static CaptionButton()
+        
+        static BaseWindow()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(CaptionButton), new FrameworkPropertyMetadata(typeof(CaptionButton)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(BaseWindow), new FrameworkPropertyMetadata(typeof(BaseWindow)));
+        }
+
+        public BaseWindow()
+        {
+            WindowStyle = WindowStyle.None;
+            ResizeMode = ResizeMode.NoResize;
         }
     }
 }

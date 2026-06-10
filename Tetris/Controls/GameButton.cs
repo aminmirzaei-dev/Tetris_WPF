@@ -44,7 +44,7 @@ namespace Tetris.Controls
     ///     <MyNamespace:GameButton/>
     ///
     /// </summary>
-    public class GameButton : Control
+    public class GameButton : System.Windows.Controls.Button
     {
         static GameButton()
         {

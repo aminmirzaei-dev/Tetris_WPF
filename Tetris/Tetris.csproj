@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\BaseWindow.cs" />
     <Compile Include="Panels\BoardStatus.xaml.cs">
       <DependentUpon>BoardStatus.xaml</DependentUpon>
     </Compile>
