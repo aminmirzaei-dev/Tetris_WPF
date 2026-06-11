@@ -5,15 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tetris.Controls"
         mc:Ignorable="d"
+                  DarkMode="False"
         Title="About" Height="416" Width="623" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Image HorizontalAlignment="Left" Height="136" Margin="39,34,0,0" VerticalAlignment="Top" Width="152" Source="/Images/About/AminMirzaei.png"/>
-        <Label Content="Amin Mirzaei" HorizontalAlignment="Left" Margin="38,200,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" FontSize="22"/>
+        <Label Content="Amin Mirzaei" HorizontalAlignment="Left" Margin="38,200,0,0" VerticalAlignment="Top" Background="{x:Null}"  FontSize="22"/>
         <Image HorizontalAlignment="Left" Height="136" Margin="244,34,0,0" VerticalAlignment="Top" Width="152" Source="/Images/About/InstagramIcon.png"/>
-        <Label Content="amin.reals" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" FontSize="22"/>
+        <Label Content="aminmirzaei.dev" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" Background="{x:Null}" FontSize="22"/>
         <Image HorizontalAlignment="Left" Height="136" Margin="446,34,0,0" VerticalAlignment="Top" Width="152" Source="/Images/About/GithubIcon.png"/>
-        <Label Content="aminmirzaeione" HorizontalAlignment="Left" Margin="432,200,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" FontSize="22"/>
-        <Label Content="Developer Informaiton" HorizontalAlignment="Center" Margin="0,318,0,0" VerticalAlignment="Top" Background="#FF2075FF" Foreground="White" FontSize="22" Width="327" HorizontalContentAlignment="Center"/>
+        <Label Content="aminmirzaei-dev" HorizontalAlignment="Left" Margin="432,200,0,0" VerticalAlignment="Top" Background="{x:Null}"  FontSize="22"/>
+        <Label Content="Developer Informaiton" HorizontalAlignment="Center" Margin="0,318,0,0" VerticalAlignment="Top" Background="#FF2075FF"  FontSize="22" Width="327" HorizontalContentAlignment="Center"/>
 
+
+        <local:CaptionButton
+    Width="48"
+    Height="48"
+    Background="Crimson"
+    BorderBrush="Black"/>
     </Grid>
 </local:BaseWindow>

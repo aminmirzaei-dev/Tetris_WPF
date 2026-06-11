@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Shell;
 
 namespace Tetris.Controls
 {
@@ -27,7 +28,15 @@ namespace Tetris.Controls
         public BaseWindow()
         {
             WindowStyle = WindowStyle.None;
-            ResizeMode = ResizeMode.NoResize;
+
+            WindowChrome.SetWindowChrome(this,
+         new WindowChrome
+         {
+             ResizeBorderThickness = new Thickness(6),
+             CaptionHeight = 0,
+             CornerRadius = new CornerRadius(0),
+             GlassFrameThickness = new Thickness(0)
+         });
         }
 
         #region CornerRadius

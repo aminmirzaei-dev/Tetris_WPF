@@ -5,16 +5,150 @@
 
 
     <Style TargetType="{x:Type local:CaptionButton}">
+
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:CaptionButton}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
-                    </Border>
+
+                    <Grid>
+
+                        <Border x:Name="Border"
+        CornerRadius="999"
+        Background="{TemplateBinding Background}"
+        BorderBrush="{TemplateBinding BorderBrush}"
+                                
+        BorderThickness="{TemplateBinding BorderThickness}">
+                            
+
+                            <Border.Effect>
+                                <DropShadowEffect x:Name="Shadow"
+                          BlurRadius="0"
+                          ShadowDepth="0"
+                          Opacity="0"/>
+                            </Border.Effect>
+
+                        </Border>
+
+                        <TextBlock x:Name="Icon"
+           Text="&#xE713;"
+           FontFamily="Segoe Fluent Icons"
+           FontSize="16"
+           Foreground="{TemplateBinding Foreground}"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Center"
+           RenderTransformOrigin="0.5,0.5">
+
+                            <TextBlock.RenderTransform>
+                                <ScaleTransform x:Name="IconScale"
+                        ScaleX="1"
+                        ScaleY="1"/>
+                            </TextBlock.RenderTransform>
+
+                        </TextBlock>
+
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsMouseOver"
+         Value="True">
+
+                            <Trigger.EnterActions>
+
+                                <BeginStoryboard>
+
+                                    <Storyboard>
+
+
+                                        <DoubleAnimation
+                    Storyboard.TargetName="IconScale"
+                    Storyboard.TargetProperty="ScaleX"
+                    To="1.15"
+                    Duration="0:0:0.18"/>
+
+                                        <DoubleAnimation
+                    Storyboard.TargetName="IconScale"
+                    Storyboard.TargetProperty="ScaleY"
+                    To="1.15"
+                    Duration="0:0:0.18"/>
+
+
+                                        <DoubleAnimation
+                    Storyboard.TargetName="Shadow"
+                    Storyboard.TargetProperty="BlurRadius"
+                    To="20"
+                    Duration="0:0:0.18"/>
+
+                                        <DoubleAnimation
+                    Storyboard.TargetName="Shadow"
+                    Storyboard.TargetProperty="Opacity"
+                    To="0.45"
+                    Duration="0:0:0.18"/>
+
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+
+                            </Trigger.EnterActions>
+
+                            <Trigger.ExitActions>
+
+                                <BeginStoryboard>
+
+                                    <Storyboard>
+
+
+                                        <DoubleAnimation
+                    Storyboard.TargetName="IconScale"
+                    Storyboard.TargetProperty="ScaleX"
+                    To="1"
+                    Duration="0:0:0.18"/>
+
+                                        <DoubleAnimation
+                    Storyboard.TargetName="IconScale"
+                    Storyboard.TargetProperty="ScaleY"
+                    To="1"
+                    Duration="0:0:0.18"/>
+
+
+                                        <DoubleAnimation
+                    Storyboard.TargetName="Shadow"
+                    Storyboard.TargetProperty="BlurRadius"
+                    To="0"
+                    Duration="0:0:0.18"/>
+
+                                        <DoubleAnimation
+                    Storyboard.TargetName="Shadow"
+                    Storyboard.TargetProperty="Opacity"
+                    To="0"
+                    Duration="0:0:0.18"/>
+
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+
+                            </Trigger.ExitActions>
+
+                        </Trigger>
+
+
+                        <Trigger Property="IsPressed"
+         Value="True">
+
+                            <Setter TargetName="Border"
+            Property="Opacity"
+            Value="0.85"/>
+
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+
+        
+
     </Style>
 
     <Style TargetType="{x:Type local:GameButton}">
@@ -69,6 +203,18 @@
 
                             <Setter Property="Foreground"
                                     Value="White"/>
+
+                        </Trigger>
+
+                        <Trigger Property="DarkMode"
+                    Value="False">
+
+                            <Setter TargetName="RootBorder"
+            Property="Background"
+            Value="White"/>
+
+                            <Setter Property="Foreground"
+            Value="Black"/>
 
                         </Trigger>
 
