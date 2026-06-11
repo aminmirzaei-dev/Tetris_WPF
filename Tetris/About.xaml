@@ -18,9 +18,10 @@
 
 
         <local:CaptionButton
-    Width="48"
-    Height="48"
-    Background="Crimson"
-    BorderBrush="Black"/>
+    Icon="&#xE713;"
+    IconSize="14"
+    Background="Green"
+    Width="45"
+    Height="45"/>
     </Grid>
 </local:BaseWindow>
