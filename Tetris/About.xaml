@@ -20,6 +20,7 @@
         <local:CaptionButton
     Icon="&#xE713;"
     IconSize="14"
+            DarkMode="True"
     Background="Green"
     Width="45"
     Height="45"/>

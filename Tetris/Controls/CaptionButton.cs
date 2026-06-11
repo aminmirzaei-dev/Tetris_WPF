@@ -34,12 +34,22 @@ namespace Tetris.Controls
 
         public static readonly DependencyProperty IconSizeProperty =
             DependencyProperty.Register(nameof(IconSize), typeof(double),
-                typeof(CaptionButton), new PropertyMetadata(16.0));
+                typeof(CaptionButton), new PropertyMetadata(14.0));
 
         public double IconSize
         {
             get => (double)GetValue(IconSizeProperty);
             set => SetValue(IconSizeProperty, value);
+        }
+
+        public static readonly DependencyProperty DarkModeProperty =
+           DependencyProperty.Register(nameof(DarkMode), typeof(bool),
+               typeof(CaptionButton), new PropertyMetadata(false));
+
+        public bool DarkMode
+        {
+            get => (bool)GetValue(DarkModeProperty);
+            set => SetValue(DarkModeProperty, value);
         }
     }
 }
