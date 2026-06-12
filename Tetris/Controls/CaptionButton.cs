@@ -17,10 +17,32 @@ namespace Tetris.Controls
 {
     public class CaptionButton : System.Windows.Controls.Button
     {
-        public enum Modes { None,Close,Maximize,Restore,Minimize}
+        public enum Modes { None, Close, Maximize, Restore, Minimize, AutoMaxRestore }
         static CaptionButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CaptionButton), new FrameworkPropertyMetadata(typeof(CaptionButton)));
+        }
+
+        public CaptionButton()
+        {
+            Loaded += CaptionButton_Loaded;
+        }
+
+        private void CaptionButton_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (this.Mode == Modes.AutoMaxRestore)
+            {
+                if(Window.GetWindow(this).WindowState == WindowState.Normal)
+                {
+                    this.Icon = "";
+                }
+                else if(Window.GetWindow(this).WindowState == WindowState.Maximized)
+                {
+                    this.Icon = "";
+                }
+            }
+
+            
         }
 
         public static readonly DependencyProperty IconProperty =
@@ -50,6 +72,47 @@ namespace Tetris.Controls
         {
             get => (bool)GetValue(DarkModeProperty);
             set => SetValue(DarkModeProperty, value);
+        }
+
+        public static readonly DependencyProperty ModeProperty =
+        DependencyProperty.Register(nameof(Mode), typeof(Tetris.Controls.CaptionButton.Modes),
+            typeof(CaptionButton), new PropertyMetadata(Tetris.Controls.CaptionButton.Modes.None));
+        public Tetris.Controls.CaptionButton.Modes Mode
+        {
+            get { return (Modes)GetValue(ModeProperty); }
+            set { SetValue(ModeProperty, value); }
+        }
+
+        protected override void OnClick()
+        {
+            base.OnClick();
+            switch (this.Mode)
+            {
+                case Modes.Close:
+                    Window.GetWindow(this).Close();
+                    break;
+                case Modes.Maximize:
+                    Window.GetWindow(this).WindowState = WindowState.Maximized;
+                    break;
+                case Modes.Minimize:
+                    Window.GetWindow(this).WindowState = WindowState.Minimized;
+                    break;
+                case Modes.Restore:
+                    Window.GetWindow(this).WindowState = WindowState.Normal;
+                    break;
+                case Modes.AutoMaxRestore:
+                    if (Window.GetWindow(this).WindowState == WindowState.Normal)
+                    {
+                        this.Icon = "";
+                        Window.GetWindow(this).WindowState = WindowState.Maximized;
+                    }
+                    else if (Window.GetWindow(this).WindowState == WindowState.Maximized)
+                    {
+                        this.Icon = "";
+                        Window.GetWindow(this).WindowState = WindowState.Normal;
+                    }
+                    break;
+            }
         }
     }
 }

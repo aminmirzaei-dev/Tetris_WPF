@@ -16,10 +16,11 @@ using System.Windows.Shell;
 
 namespace Tetris.Controls
 {
-
+    public enum Styles { None, System, Light, Dark }
+    
     public class BaseWindow : System.Windows.Window
     {
-        
+
         static BaseWindow()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(BaseWindow), new FrameworkPropertyMetadata(typeof(BaseWindow)));

@@ -92,6 +92,25 @@ Value="Black"/>
 
                         </Trigger>
 
+
+                        <Trigger Property="Mode" Value="Close">
+                            <Setter Property="Icon" Value=""/>
+                        </Trigger>
+
+                        <Trigger Property="Mode" Value="Maximize">
+                            <Setter Property="Icon" Value=""/>
+                        </Trigger>
+
+                        <Trigger Property="Mode" Value="Minimize">
+                            <Setter Property="Icon" Value=""/>
+                        </Trigger>
+
+                        <Trigger Property="Mode" Value="Restore">
+                            <Setter Property="Icon" Value=""/>
+                        </Trigger>
+
+                       
+
                         <!-- Hover -->
                         <Trigger Property="IsMouseOver" Value="True">
 

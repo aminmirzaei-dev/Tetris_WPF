@@ -18,7 +18,7 @@
 
 
         <local:CaptionButton
-    Icon="&#xE713;"
+            Mode="AutoMaxRestore"
     IconSize="14"
             DarkMode="True"
     Background="Green"
