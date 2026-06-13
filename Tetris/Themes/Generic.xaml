@@ -73,10 +73,10 @@
 
                             <Setter TargetName="Border"
                         Property="Background"
-                        Value="#1E1E1E"/>
+                        Value="#221938"/>
 
                             <Setter Property="Foreground"
-                        Value="White"/>
+                        Value="#4f358c"/>
 
                         </Trigger>
 

@@ -13,14 +13,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
+using static Tetris.Controls.CaptionButton;
 
 namespace Tetris.Controls
 {
-    public enum Styles { None, System, Light, Dark }
     
     public class BaseWindow : System.Windows.Window
     {
-
         static BaseWindow()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(BaseWindow), new FrameworkPropertyMetadata(typeof(BaseWindow)));
@@ -64,7 +63,6 @@ namespace Tetris.Controls
             get => (bool)GetValue(DarkModeProperty);
             set => SetValue(DarkModeProperty, value);
         }
-
         public static readonly DependencyProperty DarkModeProperty =
             DependencyProperty.Register(
                 nameof(DarkMode),
@@ -73,6 +71,20 @@ namespace Tetris.Controls
                 new PropertyMetadata(false));
 
         #endregion
+
+        public static readonly DependencyProperty StyleColorProperty =
+            DependencyProperty.Register(
+                nameof(StyleColor),
+                typeof(Tetris.Controls.StyleColors),
+                typeof(BaseWindow),
+                new PropertyMetadata(Tetris.Controls.StyleColors.System));
+        Tetris.Controls.StyleColors StyleColor
+        {
+            get => (Tetris.Controls.StyleColors)GetValue(StyleColorProperty);
+            set => SetValue(StyleColorProperty, value);
+        }
+
+        public Color PaletteColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
     }
 }

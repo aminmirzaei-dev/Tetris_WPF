@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Tetris.Controls
 {
+    public enum StyleColors { None, System, Light, Dark }
+
     public interface ITetrisControl
     {
-        Tetris.Controls.Styles Style { get; set; }
-        System.Windows.Media.Color Palette { get; set; }
+        Tetris.Controls.StyleColors StyleColor { get; set; }
+        System.Windows.Media.Color PaletteColor { get; set; }
     }
 }
