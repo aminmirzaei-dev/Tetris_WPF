@@ -24,5 +24,16 @@
     Background="Green"
     Width="45"
     Height="45"/>
+        
+        <local:GameButton
+    Width="100"
+    Height="40"
+    Content="About"
+            Background="Crimson"
+            FontSize="12"
+    Icon="&#xE946;"
+    IconSize="20"/>
+
+        
     </Grid>
 </local:BaseWindow>

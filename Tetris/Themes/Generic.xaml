@@ -191,16 +191,243 @@ Value="Black"/>
     </Style>
 
     <Style TargetType="{x:Type local:GameButton}">
+
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Cursor" Value="Hand"/>
+
         <Setter Property="Template">
+
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type local:CaptionButton}">
-                    <Border Background="{TemplateBinding Background}"
-                         BorderBrush="{TemplateBinding BorderBrush}"
-                         BorderThickness="{TemplateBinding BorderThickness}">
-                    </Border>
+
+                <ControlTemplate TargetType="{x:Type local:GameButton}">
+
+                    <Grid x:Name="Root"
+                      RenderTransformOrigin="0.5,0.5">
+
+                        <Grid.RenderTransform>
+                            <ScaleTransform ScaleX="1"
+                                        ScaleY="1"/>
+                        </Grid.RenderTransform>
+
+                        <!-- Shadow -->
+                        <Border Margin="0,4,0,0"
+                            CornerRadius="14"
+                            Background="#22000000"/>
+
+                        <!-- Main Body -->
+                        <Border x:Name="MainBorder"
+                            CornerRadius="14"
+                            BorderThickness="3">
+
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0"
+                                                 EndPoint="0,1">
+
+                                    <!--<GradientStop Color="#4EFF68"
+                                              Offset="0"/>
+
+                                    <GradientStop Color="#20D945"
+                                              Offset="0.5"/>
+
+                                    <GradientStop Color="#0DBA32"
+                                              Offset="1"/>-->
+
+                                    <GradientStop Color="{Binding TopBrush.Color,
+    RelativeSource={RelativeSource TemplatedParent}}"
+    Offset="0"/>
+
+                                    <GradientStop Color="{Binding Background.Color,
+    RelativeSource={RelativeSource TemplatedParent}}"
+    Offset="0.5"/>
+
+                                    <GradientStop Color="{Binding BottomBrush.Color,
+    RelativeSource={RelativeSource TemplatedParent}}"
+    Offset="1"/>
+
+                                </LinearGradientBrush>
+                            </Border.Background>
+
+                        </Border>
+
+                        <!-- Inner Border -->
+                        <Border Margin="5"
+                            CornerRadius="10"
+                            BorderThickness="1"
+                            BorderBrush="#55FFFFFF"/>
+
+                        <!-- Top Highlight -->
+                        <Border Margin="6"
+                            Height="22"
+                            VerticalAlignment="Top"
+                            CornerRadius="10">
+
+                            <Border.Background>
+
+                                <LinearGradientBrush StartPoint="0,0"
+                                                 EndPoint="0,1">
+
+                                    <GradientStop Color="#AAFFFFFF"
+                                              Offset="0"/>
+
+                                    <GradientStop Color="#00FFFFFF"
+                                              Offset="1"/>
+
+                                </LinearGradientBrush>
+
+                            </Border.Background>
+
+                        </Border>
+
+                        <!-- Shine -->
+                        <Border x:Name="Shine"
+                            Margin="6"
+                            CornerRadius="10"
+                            Opacity="0">
+
+                            <Border.Background>
+
+                                <LinearGradientBrush StartPoint="-1,0"
+                                                 EndPoint="1,0">
+
+                                    <GradientStop Color="#00FFFFFF"
+                                              Offset="0"/>
+
+                                    <GradientStop Color="#88FFFFFF"
+                                              Offset="0.5"/>
+
+                                    <GradientStop Color="#00FFFFFF"
+                                              Offset="1"/>
+
+                                </LinearGradientBrush>
+
+                            </Border.Background>
+
+                        </Border>
+
+                        <!-- Content -->
+                        <Grid Margin="20,0">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Icon -->
+                            <TextBlock Grid.Column="0"
+                                   Text="{TemplateBinding Icon}"
+                                   FontFamily="Segoe MDL2 Assets"
+                                   FontSize="{TemplateBinding IconSize}"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,15,0"/>
+
+                            <!-- Text -->
+                            <ContentPresenter Grid.Column="1"
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          RecognizesAccessKey="True"/>
+
+                        </Grid>
+
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+
+                        <!-- Hover -->
+                        <Trigger Property="IsMouseOver"
+                             Value="True">
+
+                            <Trigger.EnterActions>
+
+                                <BeginStoryboard>
+
+                                    <Storyboard>
+
+                                        <DoubleAnimation
+                                        Storyboard.TargetName="Root"
+                                        Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleX)"
+                                        To="1.03"
+                                        Duration="0:0:0.15"/>
+
+                                        <DoubleAnimation
+                                        Storyboard.TargetName="Root"
+                                        Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleY)"
+                                        To="1.03"
+                                        Duration="0:0:0.15"/>
+
+                                        <DoubleAnimation
+                                        Storyboard.TargetName="Shine"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="0.8"
+                                        Duration="0:0:0.2"/>
+
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+
+                            </Trigger.EnterActions>
+
+                            <Trigger.ExitActions>
+
+                                <BeginStoryboard>
+
+                                    <Storyboard>
+
+                                        <DoubleAnimation
+                                        Storyboard.TargetName="Root"
+                                        Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleX)"
+                                        To="1"
+                                        Duration="0:0:0.15"/>
+
+                                        <DoubleAnimation
+                                        Storyboard.TargetName="Root"
+                                        Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleY)"
+                                        To="1"
+                                        Duration="0:0:0.15"/>
+
+                                        <DoubleAnimation
+                                        Storyboard.TargetName="Shine"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="0"
+                                        Duration="0:0:0.2"/>
+
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+
+                            </Trigger.ExitActions>
+
+                        </Trigger>
+
+                        <Trigger Property="IsPressed"
+         Value="True">
+
+                            <Setter TargetName="MainBorder"
+            Property="Opacity"
+            Value="0.9"/>
+
+                        </Trigger>
+
+                        <!-- Disabled -->
+                        <Trigger Property="IsEnabled"
+                             Value="False">
+
+                            <Setter Property="Opacity"
+                                Value="0.5"/>
+
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+
                 </ControlTemplate>
+
             </Setter.Value>
+
         </Setter>
+
     </Style>
 
     <Style TargetType="{x:Type local:BaseWindow}">

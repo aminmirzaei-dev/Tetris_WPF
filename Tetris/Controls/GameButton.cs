@@ -15,40 +15,119 @@ using System.Windows.Shapes;
 
 namespace Tetris.Controls
 {
-    /// <summary>
-    /// Follow steps 1a or 1b and then 2 to use this custom control in a XAML file.
-    ///
-    /// Step 1a) Using this custom control in a XAML file that exists in the current project.
-    /// Add this XmlNamespace attribute to the root element of the markup file where it is 
-    /// to be used:
-    ///
-    ///     xmlns:MyNamespace="clr-namespace:Tetris.Controls"
-    ///
-    ///
-    /// Step 1b) Using this custom control in a XAML file that exists in a different project.
-    /// Add this XmlNamespace attribute to the root element of the markup file where it is 
-    /// to be used:
-    ///
-    ///     xmlns:MyNamespace="clr-namespace:Tetris.Controls;assembly=Tetris.Controls"
-    ///
-    /// You will also need to add a project reference from the project where the XAML file lives
-    /// to this project and Rebuild to avoid compilation errors:
-    ///
-    ///     Right click on the target project in the Solution Explorer and
-    ///     "Add Reference"->"Projects"->[Browse to and select this project]
-    ///
-    ///
-    /// Step 2)
-    /// Go ahead and use your control in the XAML file.
-    ///
-    ///     <MyNamespace:GameButton/>
-    ///
-    /// </summary>
     public class GameButton : System.Windows.Controls.Button
     {
         static GameButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(GameButton), new FrameworkPropertyMetadata(typeof(GameButton)));
+           
+            BackgroundProperty.OverrideMetadata(
+        typeof(GameButton),
+        new FrameworkPropertyMetadata(
+            Brushes.LimeGreen,
+            OnBackgroundChanged));
         }
+
+        //public GameButton()
+        //{
+        //    BackgroundProperty.OverrideMetadata(
+        //typeof(GameButton),
+        //new FrameworkPropertyMetadata(
+        //    Brushes.LimeGreen,
+        //    OnBackgroundChanged));
+        //}
+
+        public static readonly DependencyProperty IconProperty =
+        DependencyProperty.Register(nameof(Icon), typeof(string),
+            typeof(GameButton), new PropertyMetadata(""));
+        public string Icon
+        {
+            get => (string)GetValue(IconProperty);
+            set => SetValue(IconProperty, value);
+        }
+
+        public static readonly DependencyProperty IconSizeProperty =
+            DependencyProperty.Register(nameof(IconSize), typeof(double),
+                typeof(GameButton), new PropertyMetadata(14.0));
+
+        public double IconSize
+        {
+            get => (double)GetValue(IconSizeProperty);
+            set => SetValue(IconSizeProperty, value);
+        }
+
+
+        private static Color Lighten(Color color, byte amount)
+        {
+            return Color.FromRgb(
+                (byte)Math.Min(255, color.R + amount),
+                (byte)Math.Min(255, color.G + amount),
+                (byte)Math.Min(255, color.B + amount));
+        }
+
+        private static Color Darken(Color color, byte amount)
+        {
+            return Color.FromRgb(
+                (byte)Math.Max(0, color.R - amount),
+                (byte)Math.Max(0, color.G - amount),
+                (byte)Math.Max(0, color.B - amount));
+        }
+
+        public Brush TopBrush
+        {
+            get => (Brush)GetValue(TopBrushProperty);
+            private set => SetValue(TopBrushPropertyKey, value);
+        }
+
+        private static readonly DependencyPropertyKey TopBrushPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                nameof(TopBrush),
+                typeof(Brush),
+                typeof(GameButton),
+                new PropertyMetadata(Brushes.White));
+
+        public static readonly DependencyProperty TopBrushProperty =
+            TopBrushPropertyKey.DependencyProperty;
+
+
+        public Brush BottomBrush
+        {
+            get => (Brush)GetValue(BottomBrushProperty);
+            private set => SetValue(BottomBrushPropertyKey, value);
+        }
+
+        private static readonly DependencyPropertyKey BottomBrushPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                nameof(BottomBrush),
+                typeof(Brush),
+                typeof(GameButton),
+                new PropertyMetadata(Brushes.Black));
+
+        public static readonly DependencyProperty BottomBrushProperty =
+            BottomBrushPropertyKey.DependencyProperty;
+
+
+        private static void OnBackgroundChanged(
+    DependencyObject d,
+    DependencyPropertyChangedEventArgs e)
+        {
+            GameButton button = d as GameButton;
+            if (button == null)
+                return;
+
+            SolidColorBrush brush = e.NewValue as SolidColorBrush;
+            if (brush==null)
+                return;
+
+            Color color = brush.Color;
+
+            button.TopBrush =
+                new SolidColorBrush(Lighten(color, 35));
+
+            button.BottomBrush =
+                new SolidColorBrush(Darken(color, 25));
+        }
+
+
     }
 }
