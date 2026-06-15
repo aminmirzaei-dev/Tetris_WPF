@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -22,6 +23,20 @@ namespace Tetris.Windows
         public Splash()
         {
             InitializeComponent();
+
+            Opacity = 0;
+
+            Loaded += (s, e) =>
+            {
+                DoubleAnimation fade = new DoubleAnimation
+                {
+                    From = 0,
+                    To = 1,
+                    Duration = TimeSpan.FromMilliseconds(300)
+                };
+
+                BeginAnimation(OpacityProperty, fade);
+            };
         }
     }
 }

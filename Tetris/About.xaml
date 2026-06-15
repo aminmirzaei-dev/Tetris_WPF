@@ -26,12 +26,12 @@
     Height="45"/>
         
         <local:GameButton
-    Width="100"
-    Height="40"
-    Content="About"
-            Background="Crimson"
-            FontSize="12"
-    Icon="&#xE946;"
+    Width="200"
+    Height="60"
+    Content="START GAME"
+            Background="DodgerBlue"
+            FontSize="16"
+    Icon=";"
     IconSize="20"/>
 
         
