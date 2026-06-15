@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
         xmlns:local="clr-namespace:Tetris.Windows"
+        xmlns:controls="clr-namespace:Tetris.Controls"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         AllowsTransparency="True"
          Background="Transparent"
         Cursor="Wait"
-        Title="Splash" Height="400" Width="600">
+        Title="Splash" Height="400" Width="640">
 
     <shell:WindowChrome.WindowChrome>
         <shell:WindowChrome
@@ -37,22 +38,11 @@
             </Border.Background>
         </Border>
 
-        <!-- نوار پیشرفت -->
-        <Border Height="8"
-            VerticalAlignment="Bottom"
-            Margin="10,0,10,10"
-            CornerRadius="4"
-            Background="#40FFFFFF">
-
-            <Grid>
-                <Border x:Name="ProgressFill"
-                    HorizontalAlignment="Left"
-                    Width="0"
-                    CornerRadius="4"
-                    Background="#00FFAA"/>
-            </Grid>
-
-        </Border>
-
+        <controls:SplashProgressBar
+    Width="300"
+    Height="18"
+    Value="65"
+    IsReversed="True"/>
+        
     </Grid>
 </Window>
