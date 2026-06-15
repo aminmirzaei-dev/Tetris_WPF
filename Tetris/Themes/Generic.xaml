@@ -4,6 +4,11 @@
     xmlns:local="clr-namespace:Tetris.Controls">
 
 
+    <Style TargetType="{x:Type local:SplashProgressBar}">
+        
+    </Style>
+
+
     <Style TargetType="{x:Type local:CaptionButton}">
 
         <Setter Property="Width" Value="42"/>
