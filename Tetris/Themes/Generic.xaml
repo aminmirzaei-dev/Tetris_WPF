@@ -15,7 +15,7 @@
                     Background="#23262E"
                     CornerRadius="5"
                     BorderBrush="#2F3440"
-                    BorderThickness="1">
+                    BorderThickness="0">
 
                         <Grid Margin="1">
 

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Tetris.Windows
 {
@@ -20,6 +21,10 @@ namespace Tetris.Windows
     /// </summary>
     public partial class Splash : Window
     {
+
+        private DispatcherTimer loadingTimer;
+
+
         public Splash()
         {
             InitializeComponent();
@@ -37,6 +42,30 @@ namespace Tetris.Windows
 
                 BeginAnimation(OpacityProperty, fade);
             };
+            Loaded += SplashWindow_Loaded;
         }
+
+        private void SplashWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.loadingTimer = new DispatcherTimer();
+            this.loadingTimer.Interval = TimeSpan.FromMilliseconds(20);
+
+            this.loadingTimer.Tick += (s, args) =>
+            {
+                this.LoadingProgress.Value += 1;
+
+                if (this.LoadingProgress.Value >= 100)
+                {
+                    this.LoadingProgress.Value = 100;
+                    this.loadingTimer.Stop();
+
+                    MessageBox.Show("Loading Complete");
+                }
+            };
+
+            this.loadingTimer.Start();
+        }
+
+
     }
 }

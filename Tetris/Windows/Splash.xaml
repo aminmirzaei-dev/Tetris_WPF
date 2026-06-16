@@ -31,20 +31,20 @@
     <Grid>
 
         <!-- تصویر پس زمینه -->
-        <Border CornerRadius="10">
+        <Border CornerRadius="5">
             <Border.Background>
                 <ImageBrush ImageSource="/Images/Splash/TetrisSplashEN.png"
                         Stretch="Fill"/>
             </Border.Background>
         </Border>
-
         <controls:SplashProgressBar
-    Width="300"
-    Height="18"
-    Value="65"
-             VerticalAlignment="Bottom"
-        HorizontalAlignment="Center"
-    IsReversed="False"/>
-        
+            x:Name="LoadingProgress"
+    Height="8"
+    VerticalAlignment="Bottom"
+    HorizontalAlignment="Stretch"
+    Margin="0,0,0,-1"
+            
+    Value="0"/>
+
     </Grid>
 </Window>
