@@ -141,11 +141,11 @@
     <Resource Include="Images\Splash\TetrisSplashFA.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Sounds\VictoryGame.wav" />
-    <Content Include="Sounds\BlocSound.wav" />
-    <Content Include="Sounds\GameButtonSound.wav" />
-    <Content Include="Sounds\FailureGame.wav" />
-    <Content Include="Sounds\SplashSound.wav" />
+    <Resource Include="Sounds\VictoryGame.wav" />
+    <Resource Include="Sounds\BlocSound.wav" />
+    <Resource Include="Sounds\GameButtonSound.wav" />
+    <Resource Include="Sounds\FailureGame.wav" />
+    <Resource Include="Sounds\SplashSound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

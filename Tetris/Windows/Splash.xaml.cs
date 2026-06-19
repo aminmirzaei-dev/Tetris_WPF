@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -49,7 +50,8 @@ namespace Tetris.Windows
         {
             this.loadingTimer = new DispatcherTimer();
             this.loadingTimer.Interval = TimeSpan.FromMilliseconds(20);
-
+            this.PlaySound();
+           
             this.loadingTimer.Tick += (s, args) =>
             {
                 this.LoadingProgress.Value += 1;
@@ -67,6 +69,16 @@ namespace Tetris.Windows
             };
 
             this.loadingTimer.Start();
+        }
+
+        private void PlaySound()
+        {
+            System.Windows.Resources.StreamResourceInfo splashSoundResource = Application.GetResourceStream(new Uri("Sounds/SplashSound.wav", UriKind.Relative));
+            if (splashSoundResource != null)
+            {
+                SoundPlayer player = new SoundPlayer(splashSoundResource.Stream);
+                player.Play();
+            }
         }
 
 
