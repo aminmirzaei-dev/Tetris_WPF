@@ -161,10 +161,10 @@
 
                             <Setter TargetName="Border"
                         Property="Background"
-                        Value="#221938"/>
+                        Value="#3b3b3b"/>
 
                             <Setter Property="Foreground"
-                        Value="#4f358c"/>
+                        Value="#fcfcfc"/>
 
                         </Trigger>
 
@@ -197,7 +197,7 @@ Value="Black"/>
                             <Setter Property="Icon" Value=""/>
                         </Trigger>
 
-                       
+
 
                         <!-- Hover -->
                         <Trigger Property="IsMouseOver" Value="True">
@@ -520,55 +520,131 @@ Value="Black"/>
 
     <Style TargetType="{x:Type local:BaseWindow}">
 
-        <Setter Property="BorderBrush" Value="Black"/>
-        <Setter Property="BorderThickness" Value="4"/>
+        <Setter Property="BorderBrush" Value="#404040"/>
+        <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="12"/>
         <Setter Property="AllowsTransparency" Value="True"/>
-        <Setter Property="Background" Value="Blue"/>
-
 
         <Setter Property="Template">
+
             <Setter.Value>
 
                 <ControlTemplate TargetType="{x:Type local:BaseWindow}">
 
-                    <Border
-                        x:Name="RootBorder"
-                        
+                    <Border x:Name="RootBorder"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         CornerRadius="{TemplateBinding CornerRadius}">
 
-                        <AdornerDecorator>
-                            <ContentPresenter/>
-                        </AdornerDecorator>
+                        <Grid>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Title Bar -->
+
+                            <Border x:Name="TitleBar"
+                                Grid.Row="0"
+                                CornerRadius="12,12,0,0" >
+
+                                <DockPanel LastChildFill="True">
+
+                                        <!-- Icon + Title -->
+
+                                    <Grid Margin="10,0">
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <!-- Left side: Icon + Title -->
+                                        <StackPanel Orientation="Horizontal"
+                VerticalAlignment="Center">
+
+                                            <Image Width="18"
+               Height="18"
+               Source="{TemplateBinding Icon}"/>
+
+                                            <TextBlock Text="{TemplateBinding Title}"
+                   Margin="4,0,0,0"
+                   VerticalAlignment="Center"
+                   FontWeight="SemiBold"/>
+                                        </StackPanel>
+
+                                        <!-- Right side: Buttons -->
+                                        <StackPanel Grid.Column="1"
+                Orientation="Horizontal"
+                VerticalAlignment="Center">
+
+                                            <local:CaptionButton x:Name="CloseButton"
+            Width="25"
+            Height="25"
+            Mode="Close"
+            VerticalAlignment="Center"
+            IconSize="10"
+            Margin="0,0,5,0"
+            DarkMode="True"/>
+                                        </StackPanel>
+
+                                    </Grid>
+                                </DockPanel>
+
+                            </Border>
+
+                            <!-- Content -->
+
+                            <Border Grid.Row="1"
+                                Background="{TemplateBinding Background}">
+
+                                <AdornerDecorator>
+                                    <ContentPresenter/>
+                                </AdornerDecorator>
+
+                            </Border>
+
+                        </Grid>
 
                     </Border>
 
                     <ControlTemplate.Triggers>
 
+                        <!-- Dark Mode -->
+
                         <Trigger Property="DarkMode"
-                                 Value="True">
+                             Value="True">
 
                             <Setter TargetName="RootBorder"
-                                    Property="Background"
-                                    Value="#1E1E1E"/>
+                                Property="Background"
+                                Value="#1E1E1E"/>
+
+                            <Setter TargetName="TitleBar"
+                                Property="Background"
+                                Value="#252526"/>
 
                             <Setter Property="Foreground"
-                                    Value="White"/>
+                                Value="White"/>
 
                         </Trigger>
 
+                        <!-- Light Mode -->
+
                         <Trigger Property="DarkMode"
-                    Value="False">
+                             Value="False">
 
                             <Setter TargetName="RootBorder"
-            Property="Background"
-            Value="White"/>
+                                Property="Background"
+                                Value="White"/>
+
+                            <Setter TargetName="TitleBar"
+                                Property="Background"
+                                Value="#F3F4F6"/>
 
                             <Setter Property="Foreground"
-            Value="Black"/>
+                                Value="Black"/>
 
                         </Trigger>
 
@@ -577,6 +653,7 @@ Value="Black"/>
                 </ControlTemplate>
 
             </Setter.Value>
+
         </Setter>
 
     </Style>
