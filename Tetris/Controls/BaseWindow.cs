@@ -1,19 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Shell;
-using static Tetris.Controls.CaptionButton;
 
 namespace Tetris.Controls
 {
@@ -71,20 +59,6 @@ namespace Tetris.Controls
                 new PropertyMetadata(false));
 
         #endregion
-
-        public static readonly DependencyProperty StyleColorProperty =
-            DependencyProperty.Register(
-                nameof(StyleColor),
-                typeof(Tetris.Controls.StyleColors),
-                typeof(BaseWindow),
-                new PropertyMetadata(Tetris.Controls.StyleColors.System));
-        Tetris.Controls.StyleColors StyleColor
-        {
-            get => (Tetris.Controls.StyleColors)GetValue(StyleColorProperty);
-            set => SetValue(StyleColorProperty, value);
-        }
-
-        public Color PaletteColor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
     }
 }
