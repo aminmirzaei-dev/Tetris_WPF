@@ -132,7 +132,6 @@
     <Folder Include="Images\Background\" />
     <Folder Include="Images\Logo\" />
     <Folder Include="Messages\" />
-    <Folder Include="Sounds\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\About\AminMirzaei.png" />
@@ -140,6 +139,13 @@
   <ItemGroup>
     <Resource Include="Images\Splash\TetrisSplashEN.png" />
     <Resource Include="Images\Splash\TetrisSplashFA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sounds\VictoryGame.wav" />
+    <Content Include="Sounds\BlocSound.wav" />
+    <Content Include="Sounds\GameButtonSound.wav" />
+    <Content Include="Sounds\FailureGame.wav" />
+    <Content Include="Sounds\SplashSound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
