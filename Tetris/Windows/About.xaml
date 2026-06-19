@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Tetris.Windows"
         xmlns:base="clr-namespace:Tetris.Controls"
         mc:Ignorable="d"
-        DarkMode="True"
+        DarkMode="False"
+                 WindowStartupLocation="CenterScreen"
         MouseLeftButtonDown="TitleBar_MouseLeftButtonDown"
         Title="About" Height="450" Width="800">
     <Grid>

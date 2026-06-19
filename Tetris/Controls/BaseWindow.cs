@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Shell;
 
 namespace Tetris.Controls
@@ -26,6 +27,20 @@ namespace Tetris.Controls
              CornerRadius = new CornerRadius(0),
              GlassFrameThickness = new Thickness(0)
          });
+
+            Opacity = 0;
+
+            Loaded += (s, e) =>
+            {
+                DoubleAnimation fade = new DoubleAnimation
+                {
+                    From = 0,
+                    To = 1,
+                    Duration = TimeSpan.FromMilliseconds(300)
+                };
+
+                BeginAnimation(OpacityProperty, fade);
+            };
         }
 
         #region CornerRadius

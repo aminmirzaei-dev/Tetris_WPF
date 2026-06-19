@@ -59,7 +59,10 @@ namespace Tetris.Windows
                     this.LoadingProgress.Value = 100;
                     this.loadingTimer.Stop();
 
-                    MessageBox.Show("Loading Complete");
+                    Tetris.Windows.About about = new Tetris.Windows.About();
+                    about.Show();
+                    this.Close();
+
                 }
             };
 
