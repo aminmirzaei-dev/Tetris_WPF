@@ -132,6 +132,7 @@
     <Folder Include="Images\Background\" />
     <Folder Include="Images\Logo\" />
     <Folder Include="Messages\" />
+    <Folder Include="Sounds\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\About\AminMirzaei.png" />
