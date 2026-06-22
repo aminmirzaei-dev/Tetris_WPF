@@ -123,14 +123,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\About\InstagramIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\About\GithubIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Images\Background\" />
-    <Folder Include="Images\Logo\" />
     <Folder Include="Messages\" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +139,15 @@
     <Resource Include="Sounds\GameButtonSound.wav" />
     <Resource Include="Sounds\FailureGame.wav" />
     <Resource Include="Sounds\SplashSound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Logo\TetrisLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\Csharp.png" />
+    <Resource Include="Images\Icons\DesktopWPF.png" />
+    <Resource Include="Images\Icons\DotNet.png" />
+    <Resource Include="Images\Icons\MVVM.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

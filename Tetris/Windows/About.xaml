@@ -6,11 +6,366 @@
         xmlns:local="clr-namespace:Tetris.Windows"
         xmlns:base="clr-namespace:Tetris.Controls"
         mc:Ignorable="d"
-        DarkMode="False"
+        DarkMode="True"
         WindowStartupLocation="CenterScreen"
         MouseLeftButtonDown="TitleBar_MouseLeftButtonDown"
-        Title="About" Height="450" Width="800">
-    <Grid>
-        
+        Title="About" Height="600" Width="1200">
+    <Grid Margin="15">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- LEFT PROFILE CARD -->
+        <Border Grid.Column="0"
+                CornerRadius="20"
+                Padding="20">
+
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Background" Value="White"/>
+
+                    <Style.Triggers>
+                        <DataTrigger
+                    Binding="{Binding DarkMode,
+                                      RelativeSource={RelativeSource AncestorType=local:About}}"
+                    Value="True">
+                            <Setter Property="Background" Value="#2D2D30"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+
+                </Style>
+            </Border.Style>
+
+
+
+
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20"
+                                  ShadowDepth="2"
+                                  Opacity="0.15"/>
+            </Border.Effect>
+
+            <StackPanel>
+
+                <!-- Avatar -->
+                <Ellipse Width="150"
+                         Height="150"
+                         HorizontalAlignment="Center">
+
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/Images/About/AminMirzaei.png"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+
+                <TextBlock Text="Amin Mirzaei"
+                           FontSize="34"
+                           FontWeight="Bold"
+                           Foreground="#1E73E8"
+                           HorizontalAlignment="Center"
+                           Margin="0,15,0,0"/>
+
+                <TextBlock Text=".Net Developer"
+                           FontSize="20"
+                           Foreground="#8F5BFF"
+                           HorizontalAlignment="Center"/>
+
+                <Separator Margin="0,25,0,25"/>
+
+                <!-- Skills -->
+                <StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+
+                        <Image Source="/Images/Icons/DesktopWPF.png"
+           Width="30"
+           Height="30"/>
+
+                        <TextBlock Text="WPF Tech"
+               Margin="12,0,0,0"
+               VerticalAlignment="Center"
+               FontSize="18"/>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+
+                        <Image Source="/Images/Icons/DotNet.png"
+Width="30"
+Height="30"/>
+
+                        <TextBlock Text=".Net Platform"
+    Margin="12,0,0,0"
+    VerticalAlignment="Center"
+    FontSize="18"/>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+
+                        <Image Source="/Images/Icons/Csharp.png"
+Width="30"
+Height="30"/>
+
+                        <TextBlock Text="Csharp Programming"
+    Margin="12,0,0,0"
+    VerticalAlignment="Center"
+    FontSize="18"/>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+
+                        <Image Source="/Images/Icons/MVVM.png"
+Width="30"
+Height="30"/>
+
+                        <TextBlock Text="MVVM Pattern"
+    Margin="12,0,0,0"
+    VerticalAlignment="Center"
+    FontSize="18"/>
+
+                    </StackPanel>
+
+                </StackPanel>
+
+            </StackPanel>
+
+        </Border>
+
+        <!-- MAIN CONTENT -->
+        <Border Grid.Column="2"
+                CornerRadius="20"
+                Padding="40">
+
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Background" Value="White"/>
+
+                    <Style.Triggers>
+                        <DataTrigger
+         Binding="{Binding DarkMode,
+                           RelativeSource={RelativeSource AncestorType=local:About}}"
+         Value="True">
+                            <Setter Property="Background" Value="#2D2D30"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+
+                </Style>
+            </Border.Style>
+
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20"
+                                  ShadowDepth="2"
+                                  Opacity="0.1"/>
+            </Border.Effect>
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- TETRIS TITLE -->
+                <StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <TextBlock Text="T"
+                                   FontSize="64"
+                                   FontWeight="Bold"
+                                   Foreground="#00B8F0"/>
+
+                        <TextBlock Text="E"
+                                   FontSize="64"
+                                   FontWeight="Bold"
+                                   Foreground="#FFB400"/>
+
+                        <TextBlock Text="T"
+                                   FontSize="64"
+                                   FontWeight="Bold"
+                                   Foreground="#FF4A55"/>
+
+                        <TextBlock Text="R"
+                                   FontSize="64"
+                                   FontWeight="Bold"
+                                   Foreground="#9C5DFF"/>
+
+                        <TextBlock Text="I"
+                                   FontSize="64"
+                                   FontWeight="Bold"
+                                   Foreground="#4D83FF"/>
+
+                        <TextBlock Text="S"
+                                   FontSize="64"
+                                   FontWeight="Bold"
+                                   Foreground="#58C23D"/>
+
+                    </StackPanel>
+
+                    <TextBlock Text="A modern desktop implementation of the classic Tetris game built with WPF and .NET."
+                               FontSize="24"
+                               Foreground="#4A5568"
+                               Width="700"
+                               TextWrapping="Wrap"
+                               Margin="0,10,0,0"/>
+
+                </StackPanel>
+
+                <!-- INFO CARDS -->
+                <StackPanel Grid.Row="2"
+                            Orientation="Horizontal">
+
+                    <Border Width="180"
+                            Height="90"
+                            CornerRadius="12"
+                            BorderBrush="#E6EAF0"
+                            BorderThickness="1"
+                            Margin="0,0,20,0">
+
+                        <StackPanel VerticalAlignment="Center"
+                                    Margin="15">
+
+                            <TextBlock Text="📦"
+                                       FontSize="22"/>
+
+                            <TextBlock Text="Version"
+                                       Foreground="#6B7280"/>
+
+                            <TextBlock Text="1.0.0"
+                                       FontSize="22"
+                                       FontWeight="SemiBold"/>
+                        </StackPanel>
+
+                    </Border>
+
+                    <Border Width="220"
+                            Height="90"
+                            CornerRadius="12"
+                            BorderBrush="#E6EAF0"
+                            BorderThickness="1">
+
+                        <StackPanel VerticalAlignment="Center"
+                                    Margin="15">
+
+                            <TextBlock Text="📅"
+                                       FontSize="22"/>
+
+                            <TextBlock Text="Build Date"
+                                       Foreground="#6B7280"/>
+
+                            <TextBlock Text="May 2025"
+                                       FontSize="22"
+                                       FontWeight="SemiBold"/>
+                        </StackPanel>
+
+                    </Border>
+
+                </StackPanel>
+
+                <!-- CONNECT -->
+                <StackPanel Grid.Row="4">
+
+                    <TextBlock Text="CONNECT WITH ME"
+                               FontWeight="Bold"
+                               FontSize="16"
+                               Foreground="#1E73E8"/>
+
+                    <WrapPanel Margin="0,20,0,0">
+
+                        <!-- GitHub -->
+                        <Border Width="250"
+                                Height="90"
+                                CornerRadius="14"
+                                BorderBrush="#E6EAF0"
+                                BorderThickness="1"
+                                Margin="0,0,15,0">
+
+                            <StackPanel Orientation="Horizontal"
+                                        VerticalAlignment="Center"
+                                        Margin="15">
+
+                                <TextBlock Text="🐙"
+                                           FontSize="32"/>
+
+                                <StackPanel Margin="10,0,0,0">
+                                    <TextBlock Text="GitHub"
+                                               FontSize="20"
+                                               FontWeight="SemiBold"/>
+                                    <TextBlock Text="aminmirzaei-dev"/>
+                                </StackPanel>
+
+                            </StackPanel>
+
+                        </Border>
+
+                        <!-- Instagram -->
+                        <Border Width="250"
+                                Height="90"
+                                CornerRadius="14"
+                                BorderBrush="#E6EAF0"
+                                BorderThickness="1"
+                                Margin="0,0,15,0">
+
+                            <StackPanel Orientation="Horizontal"
+                                        VerticalAlignment="Center"
+                                        Margin="15">
+
+                                <TextBlock Text="📸"
+                                           FontSize="32"/>
+
+                                <StackPanel Margin="10,0,0,0">
+                                    <TextBlock Text="Instagram"
+                                               FontSize="20"
+                                               FontWeight="SemiBold"/>
+                                    <TextBlock Text="aminmirzaei.dev"/>
+                                </StackPanel>
+
+                            </StackPanel>
+
+                        </Border>
+
+                        <!-- Email -->
+                        <Border Width="250"
+                                Height="90"
+                                CornerRadius="14"
+                                BorderBrush="#E6EAF0"
+                                BorderThickness="1">
+
+                            <StackPanel Orientation="Horizontal"
+                                        VerticalAlignment="Center"
+                                        Margin="15">
+
+                                <TextBlock Text="✉"
+                                           FontSize="32"/>
+
+                                <StackPanel Margin="10,0,0,0">
+                                    <TextBlock Text="Gmail"
+                                               FontSize="20"
+                                               FontWeight="SemiBold"/>
+                                    <TextBlock Text="aminmirzaeidev@gmail.com"/>
+                                </StackPanel>
+
+                            </StackPanel>
+
+                        </Border>
+                        
+                        
+
+                    </WrapPanel>
+
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+
     </Grid>
 </base:BaseWindow>
