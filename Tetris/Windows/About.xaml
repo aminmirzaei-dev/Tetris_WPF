@@ -6,12 +6,10 @@
         xmlns:local="clr-namespace:Tetris.Windows"
         xmlns:base="clr-namespace:Tetris.Controls"
         mc:Ignorable="d"
-        DarkMode="True"
-                
-                 Icon="/Images/Logo/TetrisLogo.png"
+        DarkMode="True"  
+        Icon="/Images/Logo/TetrisLogo.png"
         WindowStartupLocation="CenterScreen"
-        
-        Title=" About Window" Height="610" Width="1200">
+        Title=" About Window" Height="620" Width="1200">
     <Grid Margin="15">
 
         <Grid.ColumnDefinitions>
@@ -246,68 +244,69 @@ Height="80" Margin="0,5,20,0"/>
                 </StackPanel>
 
                 <!-- INFO CARDS -->
-                <StackPanel Grid.Row="2"
-                            Orientation="Horizontal">
+                <StackPanel Grid.Row="2">
 
                     <TextBlock Text="Develop Info"
-            FontWeight="Bold"
-            FontSize="16"
-            Foreground="#008f56"/>
+               FontWeight="Bold"
+               FontSize="16"
+               Foreground="#008f56"/>
 
-                    <WrapPanel Margin="0,20,0,0"></WrapPanel>
+                    <WrapPanel Margin="0,15,0,0">
 
-                    <Border Width="220"
-                            Height="90"
-                            CornerRadius="12"
-                            BorderBrush="#fc9803"
-                            BorderThickness="1"
-                            Margin="0,0,20,0">
+                        <Border Width="220"
+                Height="90"
+                CornerRadius="12"
+                BorderBrush="#fc9803"
+                BorderThickness="1"
+                Margin="0,0,20,0">
 
-                        <StackPanel Orientation="Horizontal"
-                                    Margin="15">
+                            <StackPanel Orientation="Horizontal"
+                        Margin="15">
 
-                            <Image Source="/Images/Icons/AppVersion.png"
-Width="48"
-Height="48"/>
+                                <Image Source="/Images/Icons/AppVersion.png"
+                       Width="48"
+                       Height="48"/>
 
-                            <StackPanel Margin="10,0,0,0">
-                            <TextBlock Text="Version"
-           Foreground="#6B7280"/>
+                                <StackPanel Margin="10,0,0,0">
+                                    <TextBlock Text="Version"
+                               Foreground="#6B7280"/>
 
-                            <TextBlock Text="Stable 1.0.0"
-           FontSize="22"
-           FontWeight="SemiBold"/>
-                        </StackPanel>
-                </StackPanel>
+                                    <TextBlock Text="Stable 1.0.0"
+                               FontSize="22"
+                               FontWeight="SemiBold"/>
+                                </StackPanel>
 
-                    </Border>
-
-                    <Border Width="220"
-                            Height="90"
-                            CornerRadius="12"
-                            BorderBrush="#fc0339"
-                            BorderThickness="1">
-
-                        <StackPanel Orientation="Horizontal"
-                                    Margin="15">
-
-                            <Image Source="/Images/Icons/Calendar.png"
-Width="48"
-Height="48"/>
-
-                            <StackPanel Margin="10,0,0,0">
-                                <TextBlock Text="Build Date"
-           Foreground="#6B7280"/>
-
-                                <TextBlock Text="May 2025"
-           FontSize="22"
-           FontWeight="SemiBold"/>
                             </StackPanel>
 
-                            
-                        </StackPanel>
+                        </Border>
 
-                    </Border>
+                        <Border Width="220"
+                Height="90"
+                CornerRadius="12"
+                BorderBrush="#fc0339"
+                BorderThickness="1">
+
+                            <StackPanel Orientation="Horizontal"
+                        Margin="15">
+
+                                <Image Source="/Images/Icons/Calendar.png"
+                       Width="48"
+                       Height="48"/>
+
+                                <StackPanel Margin="10,0,0,0">
+                                    <TextBlock Text="Build Date"
+                               Foreground="#6B7280"/>
+
+                                    <TextBlock Text="May 2025"
+                               FontSize="22"
+                               FontWeight="SemiBold"/>
+                                </StackPanel>
+
+                            </StackPanel>
+
+                        </Border>
+
+                    </WrapPanel>
 
                 </StackPanel>
 
@@ -317,9 +316,9 @@ Height="48"/>
                     <TextBlock Text="CONNECT WITH ME"
                                FontWeight="Bold"
                                FontSize="16"
-                               Foreground="#1E73E8" Margin="0,20,0,0"/>
+                               Foreground="#1E73E8"/>
 
-                    <WrapPanel Margin="0,20,0,0">
+                    <WrapPanel Margin="0,15,0,0">
 
                         <!-- GitHub -->
                         <Border Width="250"
@@ -401,8 +400,8 @@ Height="48"/>
                             </StackPanel>
 
                         </Border>
-                        
-                        
+
+
 
                     </WrapPanel>
 
