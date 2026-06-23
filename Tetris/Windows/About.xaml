@@ -7,9 +7,11 @@
         xmlns:base="clr-namespace:Tetris.Controls"
         mc:Ignorable="d"
         DarkMode="True"
+                
+                 Icon="/Images/Logo/TetrisLogo.png"
         WindowStartupLocation="CenterScreen"
-        MouseLeftButtonDown="TitleBar_MouseLeftButtonDown"
-        Title="About" Height="600" Width="1200">
+        
+        Title=" About Window" Height="610" Width="1200">
     <Grid Margin="15">
 
         <Grid.ColumnDefinitions>
@@ -178,6 +180,10 @@ Height="30"/>
 
                     <StackPanel Orientation="Horizontal">
 
+                        <Image Source="/Images/Logo/TetrisLogo.png"
+Width="80"
+Height="80" Margin="0,5,20,0"/>
+
                         <TextBlock Text="T"
                                    FontSize="64"
                                    FontWeight="Bold"
@@ -206,14 +212,34 @@ Height="30"/>
                         <TextBlock Text="S"
                                    FontSize="64"
                                    FontWeight="Bold"
-                                   Foreground="#58C23D"/>
+                                   Foreground="#58C23D" Margin="0,0,10,0"/>
+
+                        <TextBlock Text="G"
+           FontSize="64"
+           FontWeight="Bold"
+           Foreground="#00B8F0"/>
+
+                        <TextBlock Text="A"
+           FontSize="64"
+           FontWeight="Bold"
+           Foreground="#FFB400"/>
+
+                        <TextBlock Text="M"
+           FontSize="64"
+           FontWeight="Bold"
+           Foreground="#FF4A55"/>
+
+                        <TextBlock Text="E"
+           FontSize="64"
+           FontWeight="Bold"
+           Foreground="#9C5DFF"/>
 
                     </StackPanel>
 
                     <TextBlock Text="A modern desktop implementation of the classic Tetris game built with WPF and .NET."
                                FontSize="24"
                                Foreground="#4A5568"
-                               Width="700"
+                               Width="800"
                                TextWrapping="Wrap"
                                Margin="0,10,0,0"/>
 
@@ -223,47 +249,62 @@ Height="30"/>
                 <StackPanel Grid.Row="2"
                             Orientation="Horizontal">
 
-                    <Border Width="180"
+                    <TextBlock Text="Develop Info"
+            FontWeight="Bold"
+            FontSize="16"
+            Foreground="#008f56"/>
+
+                    <WrapPanel Margin="0,20,0,0"></WrapPanel>
+
+                    <Border Width="220"
                             Height="90"
                             CornerRadius="12"
-                            BorderBrush="#E6EAF0"
+                            BorderBrush="#fc9803"
                             BorderThickness="1"
                             Margin="0,0,20,0">
 
-                        <StackPanel VerticalAlignment="Center"
+                        <StackPanel Orientation="Horizontal"
                                     Margin="15">
 
-                            <TextBlock Text="📦"
-                                       FontSize="22"/>
+                            <Image Source="/Images/Icons/AppVersion.png"
+Width="48"
+Height="48"/>
 
+                            <StackPanel Margin="10,0,0,0">
                             <TextBlock Text="Version"
-                                       Foreground="#6B7280"/>
+           Foreground="#6B7280"/>
 
-                            <TextBlock Text="1.0.0"
-                                       FontSize="22"
-                                       FontWeight="SemiBold"/>
+                            <TextBlock Text="Stable 1.0.0"
+           FontSize="22"
+           FontWeight="SemiBold"/>
                         </StackPanel>
+                </StackPanel>
 
                     </Border>
 
                     <Border Width="220"
                             Height="90"
                             CornerRadius="12"
-                            BorderBrush="#E6EAF0"
+                            BorderBrush="#fc0339"
                             BorderThickness="1">
 
-                        <StackPanel VerticalAlignment="Center"
+                        <StackPanel Orientation="Horizontal"
                                     Margin="15">
 
-                            <TextBlock Text="📅"
-                                       FontSize="22"/>
+                            <Image Source="/Images/Icons/Calendar.png"
+Width="48"
+Height="48"/>
 
-                            <TextBlock Text="Build Date"
-                                       Foreground="#6B7280"/>
+                            <StackPanel Margin="10,0,0,0">
+                                <TextBlock Text="Build Date"
+           Foreground="#6B7280"/>
 
-                            <TextBlock Text="May 2025"
-                                       FontSize="22"
-                                       FontWeight="SemiBold"/>
+                                <TextBlock Text="May 2025"
+           FontSize="22"
+           FontWeight="SemiBold"/>
+                            </StackPanel>
+
+                            
                         </StackPanel>
 
                     </Border>
@@ -276,7 +317,7 @@ Height="30"/>
                     <TextBlock Text="CONNECT WITH ME"
                                FontWeight="Bold"
                                FontSize="16"
-                               Foreground="#1E73E8"/>
+                               Foreground="#1E73E8" Margin="0,20,0,0"/>
 
                     <WrapPanel Margin="0,20,0,0">
 
@@ -284,7 +325,7 @@ Height="30"/>
                         <Border Width="250"
                                 Height="90"
                                 CornerRadius="14"
-                                BorderBrush="#E6EAF0"
+                                BorderBrush="#02a852"
                                 BorderThickness="1"
                                 Margin="0,0,15,0">
 
@@ -292,8 +333,10 @@ Height="30"/>
                                         VerticalAlignment="Center"
                                         Margin="15">
 
-                                <TextBlock Text="🐙"
-                                           FontSize="32"/>
+
+                                <Image Source="/Images/Icons/Github.png"
+           Width="48"
+           Height="48"/>
 
                                 <StackPanel Margin="10,0,0,0">
                                     <TextBlock Text="GitHub"
@@ -310,7 +353,7 @@ Height="30"/>
                         <Border Width="250"
                                 Height="90"
                                 CornerRadius="14"
-                                BorderBrush="#E6EAF0"
+                                BorderBrush="#c408a2"
                                 BorderThickness="1"
                                 Margin="0,0,15,0">
 
@@ -318,8 +361,9 @@ Height="30"/>
                                         VerticalAlignment="Center"
                                         Margin="15">
 
-                                <TextBlock Text="📸"
-                                           FontSize="32"/>
+                                <Image Source="/Images/Icons/Instagram.png"
+Width="48"
+Height="48"/>
 
                                 <StackPanel Margin="10,0,0,0">
                                     <TextBlock Text="Instagram"
@@ -336,15 +380,16 @@ Height="30"/>
                         <Border Width="250"
                                 Height="90"
                                 CornerRadius="14"
-                                BorderBrush="#E6EAF0"
+                                BorderBrush="#089cc4"
                                 BorderThickness="1">
 
                             <StackPanel Orientation="Horizontal"
                                         VerticalAlignment="Center"
                                         Margin="15">
 
-                                <TextBlock Text="✉"
-                                           FontSize="32"/>
+                                <Image Source="/Images/Icons/Gmail.png"
+Width="48"
+Height="48"/>
 
                                 <StackPanel Margin="10,0,0,0">
                                     <TextBlock Text="Gmail"

@@ -149,5 +149,16 @@
     <Resource Include="Images\Icons\DotNet.png" />
     <Resource Include="Images\Icons\MVVM.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\Github.png" />
+    <Resource Include="Images\Icons\Gmail.png" />
+    <Resource Include="Images\Icons\Instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\Calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\AppVersion.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

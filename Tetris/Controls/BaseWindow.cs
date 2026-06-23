@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -15,18 +16,20 @@ namespace Tetris.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(BaseWindow), new FrameworkPropertyMetadata(typeof(BaseWindow)));
         }
 
+        
+
         public BaseWindow()
         {
             WindowStyle = WindowStyle.None;
 
-            WindowChrome.SetWindowChrome(this,
-         new WindowChrome
-         {
-             ResizeBorderThickness = new Thickness(6),
-             CaptionHeight = 0,
-             CornerRadius = new CornerRadius(0),
-             GlassFrameThickness = new Thickness(0)
-         });
+         //   WindowChrome.SetWindowChrome(this,
+         //new WindowChrome
+         //{
+         //    ResizeBorderThickness = new Thickness(6),
+         //    CaptionHeight = 0,
+         //    CornerRadius = new CornerRadius(0),
+         //    GlassFrameThickness = new Thickness(0)
+         //});
 
             Opacity = 0;
 
@@ -41,6 +44,20 @@ namespace Tetris.Controls
 
                 BeginAnimation(OpacityProperty, fade);
             };
+        }
+
+        private Border titleBar;
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+
+            this.titleBar = GetTemplateChild("TitleBar") as Border;
+
+            if (this.titleBar != null)
+            {
+                this.titleBar.MouseLeftButtonDown += this.TitleBar_MouseLeftButtonDown;
+            }
         }
 
         #region CornerRadius
