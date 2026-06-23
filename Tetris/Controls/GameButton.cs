@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,16 +27,32 @@ namespace Tetris.Controls
         new FrameworkPropertyMetadata(
             Brushes.LimeGreen,
             OnBackgroundChanged));
+
+            
+
         }
 
-        //public GameButton()
-        //{
-        //    BackgroundProperty.OverrideMetadata(
-        //typeof(GameButton),
-        //new FrameworkPropertyMetadata(
-        //    Brushes.LimeGreen,
-        //    OnBackgroundChanged));
-        //}
+        public GameButton()
+        {
+            this.Click += this.GameButton_Clicked;
+        }
+
+        private void GameButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            this.PlaySound();
+        }
+
+        private void PlaySound()
+        {
+            System.Windows.Resources.StreamResourceInfo splashSoundResource = Application.GetResourceStream(new Uri("Sounds/GameButtonSound.wav", UriKind.Relative));
+            if (splashSoundResource != null)
+            {
+                SoundPlayer player = new SoundPlayer(splashSoundResource.Stream);
+                player.Play();
+            }
+        }
+
+        
 
         public static readonly DependencyProperty IconProperty =
         DependencyProperty.Register(nameof(Icon), typeof(string),
