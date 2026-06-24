@@ -580,14 +580,32 @@ Value="Black"/>
                 Orientation="Horizontal"
                 VerticalAlignment="Center">
 
-                                            <local:CaptionButton x:Name="CloseButton"
+                                            <local:CaptionButton x:Name="MinimizeButton"
             Width="25"
             Height="25"
-            Mode="AutoMaxRestore"
+            Mode="Minimize"
             VerticalAlignment="Center"
             IconSize="10"
             Margin="0,0,5,0"
             DarkMode="{TemplateBinding DarkMode}"/>
+
+                                            <local:CaptionButton x:Name="MaximizeButton"
+Width="25"
+Height="25"
+Mode="AutoMaxRestore"
+VerticalAlignment="Center"
+IconSize="10"
+Margin="0,0,5,0"
+DarkMode="{TemplateBinding DarkMode}"/>
+
+                                            <local:CaptionButton x:Name="CloseButton"
+Width="25"
+Height="25"
+Mode="Close"
+VerticalAlignment="Center"
+IconSize="10"
+Margin="0,0,5,0"
+DarkMode="{TemplateBinding DarkMode}"/>
                                         </StackPanel>
 
                                     </Grid>
