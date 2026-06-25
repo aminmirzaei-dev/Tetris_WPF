@@ -115,15 +115,17 @@ Height="100" Margin="5,0,0,0"/>
                         <ColumnDefinition Width="60"/>
                     </Grid.ColumnDefinitions>
 
-                    <base:GameComboBox Grid.Column="0" DarkMode="False"
+                    <base:GameComboBox Grid.Column="0" DarkMode="True"
                               Height="35">
                         <ComboBoxItem Content="EN"/>
                         <ComboBoxItem Content="FA"/>
                     </base:GameComboBox>
 
-                    <Button Grid.Column="1"
+                    <base:GameCheckBox Grid.Column="1"
                             Margin="10,0,0,0"
-                            Content="🌙"/>
+                                       Width="45"
+                                       Height="45"
+                           />
                 </Grid>
 
             </Grid>

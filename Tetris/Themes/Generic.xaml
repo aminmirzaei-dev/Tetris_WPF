@@ -676,10 +676,10 @@ DarkMode="{TemplateBinding DarkMode}"/>
 
     </Style>
 
-    <!--<Style TargetType="{x:Type local:GameComboBox}">
+    <!--<Style TargetType="{x:Type local:GameCheckBox}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type local:GameComboBox}">
+                <ControlTemplate TargetType="{x:Type local:GameCheckBox}">
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
@@ -688,6 +688,154 @@ DarkMode="{TemplateBinding DarkMode}"/>
             </Setter.Value>
         </Setter>
     </Style>-->
+
+    <Style TargetType="{x:Type local:GameCheckBox}">
+
+        <Setter Property="Width" Value="72"/>
+        <Setter Property="Height" Value="72"/>
+        <Setter Property="Background" Value="#221242"/>
+        <Setter Property="BorderBrush" Value="#4A3A74"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Cursor" Value="Hand"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+
+                <ControlTemplate TargetType="{x:Type local:GameCheckBox}">
+
+                    <Grid>
+
+                        <!-- Root Circle -->
+                        <Border x:Name="Root"
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="999"
+                            RenderTransformOrigin="0.5,0.5">
+
+                            <Border.RenderTransform>
+                                <ScaleTransform ScaleX="1"
+                                            ScaleY="1"/>
+                            </Border.RenderTransform>
+
+                        </Border>
+
+                        <!-- Moon Icon -->
+                        <TextBlock x:Name="ThemeIcon"
+           FontSize="18"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Center"
+           TextOptions.TextFormattingMode="Display"
+                                   Foreground="#cf8d00"
+                                   FontFamily="Segoe Fluent Icons"
+           TextOptions.TextRenderingMode="ClearType"/>
+
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+
+                        <!-- Hover -->
+
+                        <Trigger Property="IsMouseOver"
+                             Value="True">
+
+                            <Setter TargetName="Root"
+                                Property="BorderBrush"
+                                Value="#8066E8"/>
+
+                            <Setter TargetName="Root"
+                                Property="Effect">
+
+                                <Setter.Value>
+
+                                    <DropShadowEffect BlurRadius="15"
+                                                  ShadowDepth="0"
+                                                  Opacity="0.25"/>
+
+                                </Setter.Value>
+
+                            </Setter>
+
+                        </Trigger>
+
+                        <!-- Pressed -->
+
+                        <Trigger Property="IsPressed"
+                             Value="True">
+
+                            <Setter TargetName="Root"
+                                Property="RenderTransform">
+
+                                <Setter.Value>
+
+                                    <ScaleTransform ScaleX="0.92"
+                                                ScaleY="0.92"/>
+
+                                </Setter.Value>
+
+                            </Setter>
+
+                        </Trigger>
+
+                        <!-- Dark Mode -->
+
+                        <Trigger Property="IsChecked"
+         Value="True">
+
+                            <Setter TargetName="Root"
+            Property="Background"
+            Value="#221242"/>
+
+                            <Setter TargetName="Root"
+            Property="BorderBrush"
+            Value="#4A3A74"/>
+
+                            <Setter TargetName="ThemeIcon"
+            Property="Text"
+            Value=""/>
+
+                        </Trigger>
+
+                        <!-- Light Mode -->
+
+                        <Trigger Property="IsChecked"
+         Value="False">
+
+                            <Setter TargetName="Root"
+            Property="Background"
+            Value="#F5F5F5"/>
+
+                            <Setter TargetName="Root"
+            Property="BorderBrush"
+            Value="#cfc388"/>
+
+                            <Setter TargetName="ThemeIcon"
+            Property="Text"
+            Value=""/>
+
+                        </Trigger>
+
+                        <!-- Disabled -->
+
+                        <Trigger Property="IsEnabled"
+                             Value="False">
+
+                            <Setter TargetName="Root"
+                                Property="Opacity"
+                                Value="0.5"/>
+
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+
+            </Setter.Value>
+        </Setter>
+
+    </Style>
 
     <Style TargetType="{x:Type local:GameComboBox}">
 

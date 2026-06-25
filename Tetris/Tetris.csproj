@@ -59,6 +59,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controls\BaseWindow.cs" />
+    <Compile Include="Controls\GameCheckBox.cs" />
     <Compile Include="Controls\GameComboBox.cs" />
     <Compile Include="Controls\SplashProgressBar.cs" />
     <Compile Include="Panels\Board.xaml.cs">
