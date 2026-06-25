@@ -17,9 +17,9 @@ namespace Tetris.Windows
     /// <summary>
     /// Interaction logic for Board.xaml
     /// </summary>
-    public partial class Board : System.Windows.Window
+    public partial class Main : Tetris.Controls.BaseWindow
     {
-        public Board()
+        public Main()
         {
             InitializeComponent();
         }

@@ -66,8 +66,8 @@
     <Compile Include="Windows\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Board.xaml.cs">
-      <DependentUpon>Board.xaml</DependentUpon>
+    <Compile Include="Windows\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Splash.xaml.cs">
       <DependentUpon>Splash.xaml</DependentUpon>
@@ -90,7 +90,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Board.xaml">
+    <Page Include="Windows\Main.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
