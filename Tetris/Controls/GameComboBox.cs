@@ -15,11 +15,24 @@ using System.Windows.Shapes;
 
 namespace Tetris.Controls
 {
-    public class GameComboBox : Control
+    public class GameComboBox : System.Windows.Controls.ComboBox
     {
         static GameComboBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(GameComboBox), new FrameworkPropertyMetadata(typeof(GameComboBox)));
         }
+
+        public bool DarkMode
+        {
+            get => (bool)GetValue(IsDarkModeProperty);
+            set => SetValue(IsDarkModeProperty, value);
+        }
+
+        public static readonly DependencyProperty IsDarkModeProperty =
+            DependencyProperty.Register(
+                nameof(DarkMode),
+                typeof(bool),
+                typeof(GameComboBox),
+                new PropertyMetadata(true));
     }
 }

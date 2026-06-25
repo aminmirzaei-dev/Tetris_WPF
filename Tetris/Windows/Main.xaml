@@ -115,11 +115,11 @@ Height="100" Margin="5,0,0,0"/>
                         <ColumnDefinition Width="60"/>
                     </Grid.ColumnDefinitions>
 
-                    <ComboBox Grid.Column="0"
+                    <base:GameComboBox Grid.Column="0" DarkMode="False"
                               Height="35">
                         <ComboBoxItem Content="EN"/>
                         <ComboBoxItem Content="FA"/>
-                    </ComboBox>
+                    </base:GameComboBox>
 
                     <Button Grid.Column="1"
                             Margin="10,0,0,0"
