@@ -12,8 +12,224 @@
         mc:Ignorable="d"
         Title=" Tetris Game" Height="450" Width="800">
     <Grid>
-        <panels:Board>
-            
-        </panels:Board>
+
+        <!-- Main Columns -->
+        <Grid.ColumnDefinitions>
+            <!-- Left Panel -->
+            <ColumnDefinition Width="220"/>
+
+            <!-- Game Board -->
+            <ColumnDefinition Width="*"/>
+
+            <!-- Info Panel -->
+            <ColumnDefinition Width="220"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Panel -->
+        <Border Grid.Column="0"
+                Margin="5"
+                BorderBrush="Gray"
+                BorderThickness="1">
+
+            <Grid Margin="10">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Logo and Title -->
+                <StackPanel Orientation="Vertical">
+
+                    <Image Source="/Images/Logo/TetrisLogo.png"
+Width="100"
+Height="100" Margin="0,5,20,0"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="T"
+                FontSize="48"
+                FontWeight="Bold"
+                Foreground="#00B8F0"/>
+
+                        <TextBlock Text="E"
+                FontSize="48"
+                FontWeight="Bold"
+                Foreground="#FFB400"/>
+
+                        <TextBlock Text="T"
+                FontSize="48"
+                FontWeight="Bold"
+                Foreground="#FF4A55"/>
+
+                        <TextBlock Text="R"
+                FontSize="48"
+                FontWeight="Bold"
+                Foreground="#9C5DFF"/>
+
+                        <TextBlock Text="I"
+                FontSize="48"
+                FontWeight="Bold"
+                Foreground="#4D83FF"/>
+
+                        <TextBlock Text="S"
+                FontSize="48"
+                FontWeight="Bold"
+                Foreground="#58C23D"/>
+                    </StackPanel>
+                   
+                </StackPanel>
+
+                <!-- Buttons -->
+                <StackPanel Grid.Row="1"
+                            VerticalAlignment="Center">
+
+                    <base:GameButton x:Name="btnStartGame" Content="Start"
+                            Height="80"
+                            Margin="0,10"
+                                     FontSize="20"
+                                     Icon=""
+                                     IconSize="40"
+                                     Background="Green"/>
+
+                    <base:GameButton x:Name="btnAboutGame" Content="About"
+                            Height="80"
+                                     FontSize="20"
+                                      Icon=""
+ IconSize="40"
+                            Margin="0,10" Background="DodgerBlue" Click="AboutButton_Click"/>
+                    
+                    <base:GameButton x:Name="btnExitGame" Content="Exit"
+        Height="80"
+                                     FontSize="20"
+                                      Icon=""
+ IconSize="40"
+        Margin="0,10" Background="Crimson" Click="ExitButton_Click"/>
+
+                </StackPanel>
+
+                <!-- Bottom -->
+                <Grid Grid.Row="2"
+                      Margin="0,20,0,10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="60"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ComboBox Grid.Column="0"
+                              Height="35">
+                        <ComboBoxItem Content="EN"/>
+                        <ComboBoxItem Content="FA"/>
+                    </ComboBox>
+
+                    <Button Grid.Column="1"
+                            Margin="10,0,0,0"
+                            Content="🌙"/>
+                </Grid>
+
+            </Grid>
+        </Border>
+
+        <!-- Game Board -->
+        <Border Grid.Column="1"
+                Margin="5"
+                BorderBrush="Gray"
+                BorderThickness="1">
+
+            <Grid>
+
+                <!-- For Test -->
+                <UniformGrid Rows="20"
+                             Columns="10"
+                             Margin="20">
+
+                    <!-- Game Blocs -->
+                    <Rectangle Stroke="LightGray"/>
+                    <Rectangle Stroke="LightGray"/>
+                    <Rectangle Stroke="LightGray"/>
+                    <Rectangle Stroke="LightGray"/>
+                    <Rectangle Stroke="LightGray"/>
+                    <Rectangle Stroke="LightGray"/>
+                    <Rectangle Stroke="LightGray"/>
+                    <Rectangle Stroke="LightGray"/>
+                    <Rectangle Stroke="LightGray"/>
+                    <Rectangle Stroke="LightGray"/>
+
+                </UniformGrid>
+
+            </Grid>
+        </Border>
+
+        <!-- Right Panel -->
+        <Border Grid.Column="2"
+                Margin="5"
+                BorderBrush="Gray"
+                BorderThickness="1">
+
+            <Grid Margin="10">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Scores -->
+                <StackPanel Grid.Row="0">
+
+                    <TextBlock Text="Score"/>
+                    <TextBlock Text="8750"
+                               FontSize="24"
+                               Margin="0,0,0,15"/>
+
+                    <TextBlock Text="Level"/>
+                    <TextBlock Text="4"
+                               FontSize="24"
+                               Margin="0,0,0,15"/>
+
+                    <TextBlock Text="Lines"/>
+                    <TextBlock Text="31"
+                               FontSize="24"/>
+                </StackPanel>
+
+                <!-- Next -->
+                <Border Grid.Row="2"
+                        Margin="0,10,0,0"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+
+                    <Grid Margin="10">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="NEXT"
+                                   Margin="0,0,0,10"/>
+
+                        <StackPanel Grid.Row="1">
+
+                            <!-- Bloc 1 -->
+                            <Rectangle Height="25"
+                                       Margin="0,5"/>
+
+                            <!-- Bloc 2 -->
+                            <Rectangle Height="25"
+                                       Margin="0,5"/>
+
+                            <!-- Bloc 3 -->
+                            <Rectangle Height="25"
+                                       Margin="0,5"/>
+
+                        </StackPanel>
+
+                    </Grid>
+                </Border>
+
+            </Grid>
+        </Border>
     </Grid>
   </base:BaseWindow>

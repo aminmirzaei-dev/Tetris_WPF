@@ -23,5 +23,16 @@ namespace Tetris.Windows
         {
             InitializeComponent();
         }
+
+        private void AboutButton_Click(object sender, RoutedEventArgs e)
+        {
+            Tetris.Windows.About about = new About();
+            about.ShowDialog();
+        }
+
+        private void ExitButton_Click(object sender , RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }
