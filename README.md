@@ -1,7 +1,5 @@
 # Tetris
 
-# AnalogClock
-
 <h2> 👨‍💻 About Project</h2>
 Simple Tetris game built in WPF<br />
 
