@@ -148,7 +148,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Icons\Exit.png" />
+    <Resource Include="Images\Icons\Victory.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\About\AminMirzaei.png" />
   </ItemGroup>
