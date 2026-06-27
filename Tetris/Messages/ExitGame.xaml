@@ -12,6 +12,6 @@
                  Icon="/Images/Logo/TetrisLogo.png"
         Title=" Exit Game" Height="300" Width="500">
     <Grid>
-        
+      
     </Grid>
 </base:BaseWindow>
