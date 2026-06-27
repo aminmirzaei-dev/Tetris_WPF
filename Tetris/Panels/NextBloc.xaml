@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Tetris.Panels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Border CornerRadius="20" Height="200" Width="150" Background="White" BorderBrush="#fc0339" BorderThickness="2">
+    <Border CornerRadius="20" Height="200" Width="180" Background="White" BorderBrush="#fc0339" BorderThickness="2">
         <StackPanel Orientation="Vertical">
             <TextBlock Text="NEXT" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="16" FontStyle="Normal"></TextBlock>
             <Border VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0" Background="DodgerBlue" Height="100" Width="50"></Border>

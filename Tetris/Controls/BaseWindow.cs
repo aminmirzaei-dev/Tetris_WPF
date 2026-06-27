@@ -14,6 +14,8 @@ namespace Tetris.Controls
         static BaseWindow()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(BaseWindow), new FrameworkPropertyMetadata(typeof(BaseWindow)));
+
+           
         }
 
         private WindowChrome windowChrome;
@@ -27,6 +29,8 @@ namespace Tetris.Controls
             this.windowChrome.CaptionHeight = 0;
             this.windowChrome.CornerRadius = new CornerRadius(0);
             this.windowChrome.GlassFrameThickness = new Thickness(0);
+
+
 
             Opacity = 0;
 

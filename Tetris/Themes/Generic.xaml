@@ -524,6 +524,7 @@ Value="Black"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="12"/>
         <Setter Property="AllowsTransparency" Value="True"/>
+        
 
         <Setter Property="Template">
 

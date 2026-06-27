@@ -7,7 +7,7 @@
         xmlns:base="clr-namespace:Tetris.Controls"
                  xmlns:panels="clr-namespace:Tetris.Panels"
         Icon="/Images/Logo/TetrisLogo.png"
-        DarkMode="True"
+        DarkMode="False"
                  WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         Title=" Tetris Game" Height="700" Width="1000">
@@ -133,39 +133,16 @@ Height="100" Margin="5,0,0,0"/>
 
         <!-- Game Board -->
         <Border Grid.Column="1"
-                Margin="5"
-                BorderBrush="Gray"
-                BorderThickness="1">
+                Margin="5">
 
-            <Grid>
-
-                <!-- For Test -->
-                <UniformGrid Rows="20"
-                             Columns="10"
-                             Margin="20">
-
-                    <!-- Game Blocs -->
-                    <Rectangle Stroke="LightGray"/>
-                    <Rectangle Stroke="LightGray"/>
-                    <Rectangle Stroke="LightGray"/>
-                    <Rectangle Stroke="LightGray"/>
-                    <Rectangle Stroke="LightGray"/>
-                    <Rectangle Stroke="LightGray"/>
-                    <Rectangle Stroke="LightGray"/>
-                    <Rectangle Stroke="LightGray"/>
-                    <Rectangle Stroke="LightGray"/>
-                    <Rectangle Stroke="LightGray"/>
-
-                </UniformGrid>
-
-            </Grid>
+            <panels:Board VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                
+            </panels:Board>
         </Border>
 
         <!-- Right Panel -->
         <Border Grid.Column="2"
-                Margin="5"
-                BorderBrush="Gray"
-                BorderThickness="1">
+                Margin="5">
 
             <Grid Margin="10">
 
@@ -177,57 +154,15 @@ Height="100" Margin="5,0,0,0"/>
                 </Grid.RowDefinitions>
 
                 <!-- Scores -->
-                <StackPanel Grid.Row="0">
-
-                    <TextBlock Text="Score"/>
-                    <TextBlock Text="8750"
-                               FontSize="24"
-                               Margin="0,0,0,15"/>
-
-                    <TextBlock Text="Level"/>
-                    <TextBlock Text="4"
-                               FontSize="24"
-                               Margin="0,0,0,15"/>
-
-                    <TextBlock Text="Lines"/>
-                    <TextBlock Text="31"
-                               FontSize="24"/>
-                </StackPanel>
+                <panels:Stats VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    
+                </panels:Stats>
 
                 <!-- Next -->
-                <Border Grid.Row="2"
-                        Margin="0,10,0,0"
-                        BorderBrush="Gray"
-                        BorderThickness="1">
-
-                    <Grid Margin="10">
-
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <TextBlock Text="NEXT"
-                                   Margin="0,0,0,10"/>
-
-                        <StackPanel Grid.Row="1">
-
-                            <!-- Bloc 1 -->
-                            <Rectangle Height="25"
-                                       Margin="0,5"/>
-
-                            <!-- Bloc 2 -->
-                            <Rectangle Height="25"
-                                       Margin="0,5"/>
-
-                            <!-- Bloc 3 -->
-                            <Rectangle Height="25"
-                                       Margin="0,5"/>
-
-                        </StackPanel>
-
-                    </Grid>
-                </Border>
+                <panels:NextBloc Grid.Row="2"
+                        Margin="0,10,0,0">
+                    
+                </panels:NextBloc>
 
             </Grid>
         </Border>
