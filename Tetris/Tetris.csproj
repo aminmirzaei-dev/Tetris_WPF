@@ -65,6 +65,9 @@
     <Compile Include="Messages\ExitGame.xaml.cs">
       <DependentUpon>ExitGame.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Messages\FailureGame.xaml.cs">
+      <DependentUpon>FailureGame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Messages\VictoryGame.xaml.cs">
       <DependentUpon>VictoryGame.xaml</DependentUpon>
     </Compile>
@@ -90,6 +93,10 @@
     <Compile Include="Controls\CaptionButton.cs" />
     <Compile Include="Controls\GameButton.cs" />
     <Page Include="Messages\ExitGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Messages\FailureGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -188,6 +195,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="TetrisLogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\Failure.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
