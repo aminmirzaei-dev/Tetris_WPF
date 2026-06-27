@@ -62,6 +62,9 @@
     <Compile Include="Controls\GameCheckBox.cs" />
     <Compile Include="Controls\GameComboBox.cs" />
     <Compile Include="Controls\SplashProgressBar.cs" />
+    <Compile Include="Messages\VictoryGame.xaml.cs">
+      <DependentUpon>VictoryGame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Panels\Board.xaml.cs">
       <DependentUpon>Board.xaml</DependentUpon>
     </Compile>
@@ -83,6 +86,10 @@
     </Compile>
     <Compile Include="Controls\CaptionButton.cs" />
     <Compile Include="Controls\GameButton.cs" />
+    <Page Include="Messages\VictoryGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Panels\Board.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -136,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\Background\" />
-    <Folder Include="Messages\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\About\AminMirzaei.png" />
