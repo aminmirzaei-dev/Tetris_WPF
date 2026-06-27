@@ -32,7 +32,9 @@ namespace Tetris.Windows
 
         private void ExitButton_Click(object sender , RoutedEventArgs e)
         {
-            System.Windows.Application.Current.Shutdown();
+            Tetris.Messages.ExitGame exitGameMessage = new Messages.ExitGame();
+            exitGameMessage.Owner = this;
+            exitGameMessage.ShowDialog();
         }
     }
 }

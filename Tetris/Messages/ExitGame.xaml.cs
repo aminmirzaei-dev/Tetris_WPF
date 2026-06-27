@@ -28,5 +28,10 @@ namespace Tetris.Messages
         {
             this.Close();
         }
+
+        private void YetButton_Click(Object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }
