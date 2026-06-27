@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,5 +24,33 @@ namespace Tetris.Windows
         {
             InitializeComponent();
         }
+
+        private void GitHubBorder_Click(object sender, MouseButtonEventArgs e) 
+        {
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://www.github.com/aminmirzaei-dev",
+                UseShellExecute = true
+            });
+        }
+
+        private void InstagramBorder_Click(object sender, MouseButtonEventArgs e)
+        {
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://www.instagram.com/aminmirzaei.dev",
+                UseShellExecute = true
+            });
+        }
+
+        private void GmailBorder_Click(object sender, MouseButtonEventArgs e)
+        {
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "mailto:aminmirzaeidev@gmail.com",
+                UseShellExecute = true
+            });
+        }
+
     }
 }
