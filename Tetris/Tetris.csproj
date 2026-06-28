@@ -206,5 +206,11 @@
   <ItemGroup>
     <Resource Include="Images\Icons\Failure.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\Level.png" />
+    <Resource Include="Images\Icons\Lines.png" />
+    <Resource Include="Images\Icons\Next.png" />
+    <Resource Include="Images\Icons\Score.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
