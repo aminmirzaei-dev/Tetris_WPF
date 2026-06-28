@@ -22,17 +22,15 @@ namespace Tetris.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(GameComboBox), new FrameworkPropertyMetadata(typeof(GameComboBox)));
         }
 
+        public static readonly DependencyProperty DarkModeProperty =
+            DependencyProperty.Register(nameof(DarkMode), typeof(bool),
+                typeof(GameComboBox), new PropertyMetadata(false));
+
         public bool DarkMode
         {
-            get => (bool)GetValue(IsDarkModeProperty);
-            set => SetValue(IsDarkModeProperty, value);
+            get => (bool)GetValue(DarkModeProperty);
+            set => SetValue(DarkModeProperty, value);
         }
 
-        public static readonly DependencyProperty IsDarkModeProperty =
-            DependencyProperty.Register(
-                nameof(DarkMode),
-                typeof(bool),
-                typeof(GameComboBox),
-                new PropertyMetadata(true));
     }
 }
