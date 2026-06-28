@@ -8,7 +8,10 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Border CornerRadius="20" Height="200" Width="180" BorderBrush="#fc0339" BorderThickness="2">
         <StackPanel Orientation="Vertical">
-            <TextBlock Text="NEXT" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="16" FontStyle="Normal"></TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,0,0">
+                <Image Source="/Images/Icons/Next.png" Width="32" Height="32"></Image>
+                <TextBlock VerticalAlignment="Center" Text="NEXT" Margin="5,0,0,0" FontSize="16" FontStyle="Normal"></TextBlock>
+            </StackPanel>
             <Border VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,20,0,0" Background="DodgerBlue" Height="100" Width="50"></Border>
         </StackPanel>
     </Border>
