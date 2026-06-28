@@ -135,10 +135,12 @@ Height="100" Margin="5,0,0,0"/>
         <Border Grid.Column="1"
                 Margin="5">
 
-            <panels:Board VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <panels:Board x:Name="GameBoard" Margin="0,10,0,10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 
             </panels:Board>
+
         </Border>
+
 
         <!-- Right Panel -->
         <Border Grid.Column="2"
@@ -154,12 +156,12 @@ Height="100" Margin="5,0,0,0"/>
                 </Grid.RowDefinitions>
 
                 <!-- Scores -->
-                <panels:Stats VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <panels:Stats x:Name="Stats" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     
                 </panels:Stats>
 
                 <!-- Next -->
-                <panels:NextBloc Grid.Row="2"
+                <panels:NextBloc x:Name="NextBloc" Grid.Row="2"
                         Margin="0,10,0,0">
                     
                 </panels:NextBloc>

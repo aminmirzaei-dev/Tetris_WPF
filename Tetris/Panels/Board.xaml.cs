@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Tetris.Panels
 {
@@ -20,9 +21,11 @@ namespace Tetris.Panels
     /// </summary>
     public partial class Board : UserControl
     {
+
         public Board()
         {
             InitializeComponent();
         }
+
     }
 }

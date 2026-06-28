@@ -35,5 +35,10 @@ namespace Tetris.Panels
             set => SetValue(DarkModeProperty, value);
         }
 
+        public Canvas GetCanvas()
+        {
+            return this.nextShapeCanvas;
+        }
+
     }
 }

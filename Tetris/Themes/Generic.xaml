@@ -642,7 +642,7 @@ DarkMode="{TemplateBinding DarkMode}"/>
 
                             <Setter TargetName="TitleBar"
                                 Property="Background"
-                                Value="#252526"/>
+                                Value="{DynamicResource WindowDarkTitleBackground}"/>
 
                             <Setter Property="Foreground"
                                 Value="White"/>
@@ -660,7 +660,7 @@ DarkMode="{TemplateBinding DarkMode}"/>
 
                             <Setter TargetName="TitleBar"
                                 Property="Background"
-                                Value="#F3F4F6"/>
+                                Value="{DynamicResource WindowLightTitleBackground}"/>
 
                             <Setter Property="Foreground"
                                 Value="Black"/>
