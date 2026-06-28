@@ -24,5 +24,16 @@ namespace Tetris.Panels
         {
             InitializeComponent();
         }
+
+        public static readonly DependencyProperty DarkModeProperty =
+  DependencyProperty.Register(nameof(DarkMode), typeof(bool),
+      typeof(NextBloc), new PropertyMetadata(false));
+
+        public bool DarkMode
+        {
+            get => (bool)GetValue(DarkModeProperty);
+            set => SetValue(DarkModeProperty, value);
+        }
+
     }
 }

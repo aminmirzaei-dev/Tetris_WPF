@@ -58,7 +58,7 @@ namespace Tetris.Panels
 
         public static readonly DependencyProperty LineValueProperty =
   DependencyProperty.Register(nameof(LineValue), typeof(string),
-      typeof(Stats), new PropertyMetadata("12,300"));
+      typeof(Stats), new PropertyMetadata("43"));
 
         public string LineValue
         {
