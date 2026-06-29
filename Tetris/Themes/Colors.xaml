@@ -1,14 +1,20 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <SolidColorBrush x:Key="LightWindowBackground" Color="White"/>
-    <SolidColorBrush x:Key="DarkWindowBackground" Color="#1E1E1E"/>
-    <SolidColorBrush x:Key="LightPanelBackground" Color="WhiteSmoke"/>
-    <SolidColorBrush x:Key="DarkPanelBackground" Color="#2D2D30"/>
+    <SolidColorBrush x:Key="WindowLightBackground" Color="White"/>
+    <SolidColorBrush x:Key="WindowDarkBackground" Color="#1E1E1E"/>
+    <SolidColorBrush x:Key="PanelLightBackground" Color="WhiteSmoke"/>
+    <SolidColorBrush x:Key="PanelDarkBackground" Color="#2D2D30"/>
     <SolidColorBrush x:Key="WindowLightBorderColor" Color="Black"/>
     <SolidColorBrush x:Key="WindowDarkBorderColor" Color="White"/>
-    <SolidColorBrush x:Key="WindowLightTitleBackground" Color="#F3F4F6"/>
-    <SolidColorBrush x:Key="WindowDarkTitleBackground" Color="#252526"/>
+    <SolidColorBrush x:Key="WindowTitleLightBackground" Color="#F3F4F6"/>
+    <SolidColorBrush x:Key="WindowTitleDarkBackground" Color="#252526"/>
+    <SolidColorBrush x:Key="CaptionButtonLightBackground" Color="White"/>
+    <SolidColorBrush x:Key="CaptionButtonDarkBackground" Color="#3b3b3b"/>
+    <SolidColorBrush x:Key="GameCheckBoxLightBackground" Color="#F5F5F5"/>
+    <SolidColorBrush x:Key="GameCheckBoxDarkBackground" Color="#181e2b"/>
+    <SolidColorBrush x:Key="GameCheckBoxLightBorder" Color="#cfc388"/>
+    <SolidColorBrush x:Key="GameCheckBoxDarkBorder" Color="#1f2633"/>
     <SolidColorBrush x:Key="PanelBorderColor" Color="SlateBlue"/>
 
 </ResourceDictionary>

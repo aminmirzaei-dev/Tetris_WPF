@@ -17,6 +17,7 @@
                     BorderBrush="#2F3440"
                     BorderThickness="0">
 
+                        
                         <Grid Margin="1">
 
                             <!-- Progress -->
@@ -161,7 +162,7 @@
 
                             <Setter TargetName="Border"
                         Property="Background"
-                        Value="#3b3b3b"/>
+                        Value="{DynamicResource CaptionButtonDarkBackground}"/>
 
                             <Setter Property="Foreground"
                         Value="#fcfcfc"/>
@@ -173,7 +174,7 @@
 
                             <Setter TargetName="Border"
 Property="Background"
-Value="White"/>
+Value="{DynamicResource CaptionButtonLightBackground}"/>
 
                             <Setter Property="Foreground"
 Value="Black"/>
@@ -183,18 +184,26 @@ Value="Black"/>
 
                         <Trigger Property="Mode" Value="Close">
                             <Setter Property="Icon" Value=""/>
+                            <Setter Property="Foreground" Value="#ff5773"/>
                         </Trigger>
 
                         <Trigger Property="Mode" Value="Maximize">
                             <Setter Property="Icon" Value=""/>
+                            <Setter Property="Foreground" Value="#3be351"/>
                         </Trigger>
 
                         <Trigger Property="Mode" Value="Minimize">
                             <Setter Property="Icon" Value=""/>
+                            <Setter Property="Foreground" Value="#57aeff"/>
                         </Trigger>
 
                         <Trigger Property="Mode" Value="Restore">
                             <Setter Property="Icon" Value=""/>
+                            <Setter Property="Foreground" Value="#7857ff"/>
+                        </Trigger>
+
+                        <Trigger Property="Mode" Value="AutoMaxRestore">
+                            <Setter Property="Foreground" Value="#3be351"/>
                         </Trigger>
 
 
@@ -524,7 +533,7 @@ Value="Black"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="12"/>
         <Setter Property="AllowsTransparency" Value="True"/>
-        
+
 
         <Setter Property="Template">
 
@@ -553,7 +562,7 @@ Value="Black"/>
 
                                 <DockPanel LastChildFill="True">
 
-                                        <!-- Icon + Title -->
+                                    <!-- Icon + Title -->
 
                                     <Grid Margin="10,0">
 
@@ -638,11 +647,11 @@ DarkMode="{TemplateBinding DarkMode}"/>
 
                             <Setter TargetName="RootBorder"
                                 Property="Background"
-                                Value="#1E1E1E"/>
+                                Value="{DynamicResource WindowDarkBackground}"/>
 
                             <Setter TargetName="TitleBar"
                                 Property="Background"
-                                Value="{DynamicResource WindowDarkTitleBackground}"/>
+                                Value="{DynamicResource WindowTitleDarkBackground}"/>
 
                             <Setter Property="Foreground"
                                 Value="White"/>
@@ -656,11 +665,11 @@ DarkMode="{TemplateBinding DarkMode}"/>
 
                             <Setter TargetName="RootBorder"
                                 Property="Background"
-                                Value="White"/>
+                                Value="{DynamicResource WindowLightBackground}"/>
 
                             <Setter TargetName="TitleBar"
                                 Property="Background"
-                                Value="{DynamicResource WindowLightTitleBackground}"/>
+                                Value="{DynamicResource WindowTitleLightBackground}"/>
 
                             <Setter Property="Foreground"
                                 Value="Black"/>
@@ -676,19 +685,6 @@ DarkMode="{TemplateBinding DarkMode}"/>
         </Setter>
 
     </Style>
-
-    <!--<Style TargetType="{x:Type local:GameCheckBox}">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type local:GameCheckBox}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>-->
 
     <Style TargetType="{x:Type local:GameCheckBox}">
 
@@ -787,11 +783,11 @@ DarkMode="{TemplateBinding DarkMode}"/>
 
                             <Setter TargetName="Root"
             Property="Background"
-            Value="#221242"/>
+            Value="{DynamicResource GameCheckBoxDarkBackground}"/>
 
                             <Setter TargetName="Root"
             Property="BorderBrush"
-            Value="#4A3A74"/>
+            Value="{DynamicResource GameCheckBoxDarkBorder}"/>
 
                             <Setter TargetName="ThemeIcon"
             Property="Text"
@@ -806,11 +802,11 @@ DarkMode="{TemplateBinding DarkMode}"/>
 
                             <Setter TargetName="Root"
             Property="Background"
-            Value="#F5F5F5"/>
+            Value="{DynamicResource GameCheckBoxLightBackground}"/>
 
                             <Setter TargetName="Root"
             Property="BorderBrush"
-            Value="#cfc388"/>
+            Value="{DynamicResource GameCheckBoxLightBorder}"/>
 
                             <Setter TargetName="ThemeIcon"
             Property="Text"
