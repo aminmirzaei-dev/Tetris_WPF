@@ -3,8 +3,6 @@
 
     <SolidColorBrush x:Key="WindowLightBackground" Color="White"/>
     <SolidColorBrush x:Key="WindowDarkBackground" Color="#1E1E1E"/>
-    <SolidColorBrush x:Key="PanelLightBackground" Color="WhiteSmoke"/>
-    <SolidColorBrush x:Key="PanelDarkBackground" Color="#2D2D30"/>
     <SolidColorBrush x:Key="WindowLightBorderColor" Color="Black"/>
     <SolidColorBrush x:Key="WindowDarkBorderColor" Color="White"/>
     <SolidColorBrush x:Key="WindowTitleLightBackground" Color="#F3F4F6"/>
@@ -15,6 +13,8 @@
     <SolidColorBrush x:Key="GameCheckBoxDarkBackground" Color="#181e2b"/>
     <SolidColorBrush x:Key="GameCheckBoxLightBorder" Color="#cfc388"/>
     <SolidColorBrush x:Key="GameCheckBoxDarkBorder" Color="#1f2633"/>
+    <SolidColorBrush x:Key="PanelLightBackground" Color="White"/>
+    <SolidColorBrush x:Key="PanelDarkBackground" Color="#2D2D30"/>
     <SolidColorBrush x:Key="PanelBorderColor" Color="SlateBlue"/>
 
 </ResourceDictionary>

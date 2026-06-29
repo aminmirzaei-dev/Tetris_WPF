@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Tetris.Windows"
         xmlns:base="clr-namespace:Tetris.Controls"
         mc:Ignorable="d"
-        DarkMode="True"  
+        DarkMode="False"  
                  WindowMode="Dialog"
         Icon="/Images/Logo/TetrisLogo.png"
         WindowStartupLocation="CenterScreen"
@@ -26,14 +26,14 @@
 
             <Border.Style>
                 <Style TargetType="Border">
-                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Background" Value="{DynamicResource PanelLightBackground}"/>
 
                     <Style.Triggers>
                         <DataTrigger
                     Binding="{Binding DarkMode,
                                       RelativeSource={RelativeSource AncestorType=local:About}}"
                     Value="True">
-                            <Setter Property="Background" Value="#2D2D30"/>
+                            <Setter Property="Background" Value="{DynamicResource PanelDarkBackground}"/>
                         </DataTrigger>
                     </Style.Triggers>
 
@@ -143,14 +143,14 @@ Height="30"/>
 
             <Border.Style>
                 <Style TargetType="Border">
-                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Background" Value="{DynamicResource PanelLightBackground}"/>
 
                     <Style.Triggers>
                         <DataTrigger
          Binding="{Binding DarkMode,
                            RelativeSource={RelativeSource AncestorType=local:About}}"
          Value="True">
-                            <Setter Property="Background" Value="#2D2D30"/>
+                            <Setter Property="Background" Value="{DynamicResource PanelDarkBackground}"/>
                         </DataTrigger>
                     </Style.Triggers>
 
