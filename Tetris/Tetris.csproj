@@ -179,7 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Sounds\VictoryGame.wav" />
-    <Resource Include="Sounds\BlocSound.wav" />
     <Resource Include="Sounds\GameButtonSound.wav" />
     <Resource Include="Sounds\FailureGame.wav" />
     <Resource Include="Sounds\SplashSound.wav" />
@@ -215,6 +214,10 @@
     <Resource Include="Images\Icons\Lines.png" />
     <Resource Include="Images\Icons\Next.png" />
     <Resource Include="Images\Icons\Score.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sounds\Collided.wav" />
+    <Content Include="Sounds\DeleteLine.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -115,7 +115,8 @@ Height="100" Margin="5,0,0,0"/>
                         <ColumnDefinition Width="60"/>
                     </Grid.ColumnDefinitions>
 
-                    <base:GameComboBox Grid.Column="0" DarkMode="True"
+                    <base:GameComboBox Grid.Column="0" DarkMode="{Binding IsDarkMode,
+                                            RelativeSource={RelativeSource AncestorType=local:Main}}"
                               Height="35">
                         <ComboBoxItem Content="EN"/>
                         <ComboBoxItem Content="FA"/>
@@ -156,13 +157,15 @@ Height="100" Margin="5,0,0,0"/>
                 </Grid.RowDefinitions>
 
                 <!-- Scores -->
-                <panels:Stats x:Name="Stats" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <panels:Stats x:Name="Stats" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" DarkMode="{Binding DarkMode,
+                          RelativeSource={RelativeSource AncestorType=local:Main}}">
                     
                 </panels:Stats>
 
                 <!-- Next -->
                 <panels:NextBloc x:Name="NextBloc" Grid.Row="2"
-                        Margin="0,10,0,0">
+                        Margin="0,10,0,0" DarkMode="{Binding DarkMode,
+                          RelativeSource={RelativeSource AncestorType=local:Main}}">
                     
                 </panels:NextBloc>
 

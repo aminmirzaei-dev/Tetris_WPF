@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Tetris.Windows"
         xmlns:base="clr-namespace:Tetris.Controls"
         mc:Ignorable="d"
-        DarkMode="False"  
+        DarkMode="True"  
                  WindowMode="Dialog"
         Icon="/Images/Logo/TetrisLogo.png"
         WindowStartupLocation="CenterScreen"
@@ -22,7 +22,7 @@
         <!-- LEFT PROFILE CARD -->
         <Border Grid.Column="0"
                 CornerRadius="20"
-                Padding="20">
+                Padding="20" BorderBrush="{DynamicResource TetrisPurple}" BorderThickness="2">
 
             <Border.Style>
                 <Style TargetType="Border">
@@ -139,7 +139,7 @@ Height="30"/>
         <!-- MAIN CONTENT -->
         <Border Grid.Column="2"
                 CornerRadius="20"
-                Padding="40">
+                Padding="40" BorderBrush="{DynamicResource TetrisOrange}" BorderThickness="2">
 
             <Border.Style>
                 <Style TargetType="Border">

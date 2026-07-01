@@ -12,9 +12,14 @@
     <SolidColorBrush x:Key="GameCheckBoxLightBackground" Color="#F5F5F5"/>
     <SolidColorBrush x:Key="GameCheckBoxDarkBackground" Color="#181e2b"/>
     <SolidColorBrush x:Key="GameCheckBoxLightBorder" Color="#cfc388"/>
+    <SolidColorBrush x:Key="GameCheckBoxForeground" Color="#cf8d00"/>
     <SolidColorBrush x:Key="GameCheckBoxDarkBorder" Color="#1f2633"/>
     <SolidColorBrush x:Key="PanelLightBackground" Color="White"/>
     <SolidColorBrush x:Key="PanelDarkBackground" Color="#2D2D30"/>
-    <SolidColorBrush x:Key="PanelBorderColor" Color="SlateBlue"/>
+    <SolidColorBrush x:Key="TetrisRed" Color="#ff5773"/>
+    <SolidColorBrush x:Key="TetrisBlue" Color="#57aeff"/>
+    <SolidColorBrush x:Key="TetrisGreen" Color="#3be351"/>
+    <SolidColorBrush x:Key="TetrisPurple" Color="#7857ff"/>
+    <SolidColorBrush x:Key="TetrisOrange" Color="Tomato"/>
 
 </ResourceDictionary>

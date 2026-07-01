@@ -184,26 +184,26 @@ Value="Black"/>
 
                         <Trigger Property="Mode" Value="Close">
                             <Setter Property="Icon" Value=""/>
-                            <Setter Property="Foreground" Value="#ff5773"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TetrisRed}"/>
                         </Trigger>
 
                         <Trigger Property="Mode" Value="Maximize">
                             <Setter Property="Icon" Value=""/>
-                            <Setter Property="Foreground" Value="#3be351"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TetrisGreen}"/>
                         </Trigger>
 
                         <Trigger Property="Mode" Value="Minimize">
                             <Setter Property="Icon" Value=""/>
-                            <Setter Property="Foreground" Value="#57aeff"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TetrisBlue}"/>
                         </Trigger>
 
                         <Trigger Property="Mode" Value="Restore">
                             <Setter Property="Icon" Value=""/>
-                            <Setter Property="Foreground" Value="#7857ff"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TetrisPurple}"/>
                         </Trigger>
 
                         <Trigger Property="Mode" Value="AutoMaxRestore">
-                            <Setter Property="Foreground" Value="#3be351"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TetrisGreen}"/>
                         </Trigger>
 
 
@@ -725,7 +725,7 @@ DarkMode="{TemplateBinding DarkMode}"/>
            HorizontalAlignment="Center"
            VerticalAlignment="Center"
            TextOptions.TextFormattingMode="Display"
-                                   Foreground="#cf8d00"
+                                   Foreground="{DynamicResource GameCheckBoxForeground}"
                                    FontFamily="Segoe Fluent Icons"
            TextOptions.TextRenderingMode="ClearType"/>
 
@@ -836,9 +836,9 @@ DarkMode="{TemplateBinding DarkMode}"/>
 
     <Style TargetType="{x:Type local:GameComboBox}">
 
-        <Setter Property="Background" Value="#241248"/>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="BorderBrush" Value="#49376F"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="{DynamicResource GameCheckBoxForeground}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource GameCheckBoxLightBorder}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Height" Value="48"/>
         <Setter Property="Padding" Value="12,0"/>
@@ -886,7 +886,7 @@ DarkMode="{TemplateBinding DarkMode}"/>
 
                                         <Setter TargetName="ItemBorder"
                                             Property="Background"
-                                            Value="#5C47A6"/>
+                                            Value="{DynamicResource GameCheckBoxLightBorder}"/>
 
                                     </Trigger>
 
@@ -895,15 +895,15 @@ DarkMode="{TemplateBinding DarkMode}"/>
 
                                         <Setter TargetName="ItemBorder"
                                             Property="Background"
-                                            Value="#7B5FFF"/>
+                                            Value="{DynamicResource GameCheckBoxLightBorder}"/>
 
                                     </Trigger>
 
                                     <DataTrigger Binding="{Binding IsDarkMode,
                                             RelativeSource={RelativeSource AncestorType=local:GameComboBox}}"
-                                             Value="False">
+                                             Value="True">
 
-                                        <Setter Property="Foreground"
+                                        <Setter Property="Background"
                                             Value="#222222"/>
 
                                     </DataTrigger>

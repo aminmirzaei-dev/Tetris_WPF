@@ -23,6 +23,10 @@ namespace Tetris.Windows
         public Main()
         {
             this.InitializeComponent();
+            this.GameBoard.ParentWindow = this;
+            this.GameBoard.StartStopButton = this.btnStartGame;
+            this.GameBoard.NextBlocPanel = this.NextBloc;
+            this.GameBoard.StatsPanel = this.Stats;
         }
 
 
