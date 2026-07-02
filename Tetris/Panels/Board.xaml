@@ -8,7 +8,24 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <Border CornerRadius="20" BorderBrush="{DynamicResource TetrisRed}" BorderThickness="2">
-        <Grid x:Name="tetrisGrid" Margin="10" Background="Black">
+
+        <Border.Style>
+            <Style TargetType="Border">
+                <Setter Property="Background" Value="{DynamicResource PanelLightBackground}"/>
+
+                <Style.Triggers>
+                    <DataTrigger
+Binding="{Binding DarkMode,
+                  RelativeSource={RelativeSource AncestorType=local:Board}}"
+Value="True">
+                        <Setter Property="Background" Value="{DynamicResource PanelDarkBackground}"/>
+                    </DataTrigger>
+                </Style.Triggers>
+
+            </Style>
+        </Border.Style>
+        
+        <Grid x:Name="tetrisGrid" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="25"/>
                 <RowDefinition Height="25"/>

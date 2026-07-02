@@ -20,11 +20,14 @@ namespace Tetris.Messages
     /// </summary>
     public partial class FailureGame : Tetris.Controls.BaseWindow
     {
-        public FailureGame()
+        private Tetris.Panels.Board boardResetButton;
+        public FailureGame(Tetris.Panels.Board board)
         {
             InitializeComponent();
             Loaded += FailureGame_Loaded;
+            this.boardResetButton = board;
         }
+
 
         private void FailureGame_Loaded(object sender, RoutedEventArgs e)
         {
@@ -43,6 +46,12 @@ namespace Tetris.Messages
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void RestartButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.boardResetButton.StartStopButton_Click(sender,e);
             this.Close();
         }
     }

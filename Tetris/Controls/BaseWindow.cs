@@ -20,6 +20,7 @@ namespace Tetris.Controls
 
         private WindowChrome windowChrome;
 
+
         public BaseWindow()
         {
             WindowStyle = WindowStyle.None;

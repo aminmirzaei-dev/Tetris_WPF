@@ -177,6 +177,16 @@ namespace Tetris.Panels
            
         }
 
+        public static readonly DependencyProperty DarkModeProperty =
+  DependencyProperty.Register(nameof(DarkMode), typeof(bool),
+      typeof(Board), new PropertyMetadata(false));
+
+        public bool DarkMode
+        {
+            get => (bool)GetValue(DarkModeProperty);
+            set => SetValue(DarkModeProperty, value);
+        }
+
         private void Board_Loaded(object sender, RoutedEventArgs e)
         {
             if (this.ParentWindow != null)
@@ -279,7 +289,7 @@ namespace Tetris.Panels
                 {
                     this.gameSpeed -= 50;
                     this.gameLevel++;
-                    this.StatsPanel.LevelValue = gameLevel.ToString();
+                    this.StatsPanel.levelTextBlock.Text = gameLevel.ToString();
                 }
                 else { gameSpeed = 50; }
                 this.timer.Stop();
@@ -292,21 +302,21 @@ namespace Tetris.Panels
         }
 
         // Button start stop clicked method
-        private void StartStopButton_Click(object sender, RoutedEventArgs e)
+        public void StartStopButton_Click(object sender, RoutedEventArgs e)
         {
 
             if (isGameOver)
             {
                 tetrisGrid.Children.Clear();
-                this.NextBlocPanel.GetCanvas().Children.Clear();
+                this.NextBlocPanel.nextShapeCanvas.Children.Clear();
                 //GameOverTxt.Visibility = Visibility.Collapsed;
                 isGameOver = false;
             }
             if (!timer.IsEnabled)
             {
-                if (!gameActive) { this.StatsPanel.ScoreValue = "0"; leftPos = 3; this.AddShape(this.currentShapeNumber, leftPos); }
+                if (!gameActive) { this.StatsPanel.scoreTextBlock.Text = "0"; leftPos = 3; this.AddShape(this.currentShapeNumber, leftPos); }
                 //nextTxt.Visibility = levelTxt.Visibility = Visibility.Visible;
-                this.StatsPanel.LevelValue = gameLevel.ToString();
+                this.StatsPanel.levelTextBlock.Text = gameLevel.ToString();
                 timer.Start();
                 this.StartStopButton.Content = "Stop";
                 this.StartStopButton.Icon = "";
@@ -452,7 +462,7 @@ namespace Tetris.Panels
         // Draw next shape tetromino in nextShapeCanvas 
         private void DrawNextShape(int shapeNumber)
         {
-            this.NextBlocPanel.GetCanvas().Children.Clear();
+            this.NextBlocPanel.nextShapeCanvas.Children.Clear();
             int[,] nextShapeTetromino = null;
             nextShapeTetromino = GetVariableByString(arrayTetrominos[shapeNumber]);
             int firstDim = nextShapeTetromino.GetLength(0);
@@ -468,7 +478,7 @@ namespace Tetris.Panels
                     if (bit == 1)
                     {
                         square = GetBasicSquare(shapeColor[shapeNumber - 1]);
-                        this.NextBlocPanel.GetCanvas().Children.Add(square);
+                        this.NextBlocPanel.nextShapeCanvas.Children.Add(square);
                         Canvas.SetLeft(square, x);
                         Canvas.SetTop(square, y);
                     }
@@ -544,7 +554,7 @@ namespace Tetris.Panels
                 {
                     playSound(1);
                     DeleteLine(row);
-                    this.StatsPanel.ScoreValue = GetScore().ToString();
+                    this.StatsPanel.scoreTextBlock.Text = GetScore().ToString();
                     CheckComplete();
                 }
             }
@@ -585,7 +595,7 @@ namespace Tetris.Panels
         }
 
         // Some reset
-        private void Reset()
+        public void Reset()
         {
             downPos = 0;
             leftPos = 3;
@@ -608,7 +618,8 @@ namespace Tetris.Panels
             this.StartStopButton.Content = "Start";
             this.StartStopButton.Icon = "";
             this.StartStopButton.Background = Brushes.Green;
-            Tetris.Messages.FailureGame failureGame = new Messages.FailureGame();
+            Tetris.Messages.FailureGame failureGame = new Messages.FailureGame(this);
+            failureGame.Owner = this.ParentWindow;
             failureGame.ShowDialog();
             rowCount = 0;
             columnCount = 0;
