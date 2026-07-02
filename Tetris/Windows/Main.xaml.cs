@@ -33,6 +33,7 @@ namespace Tetris.Windows
         private void AboutButton_Click(object sender, RoutedEventArgs e)
         {
             Tetris.Windows.About about = new About();
+            about.Owner = this;
             about.ShowDialog();
         }
 

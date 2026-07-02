@@ -7,7 +7,6 @@
         xmlns:base="clr-namespace:Tetris.Controls"
         mc:Ignorable="d"
                  WindowMode="Dialog"
-                 DarkMode="True"
                  Icon="/Images/Logo/TetrisLogo.png"
                  WindowStartupLocation="CenterOwner"
         Title=" Victory Game" Height="320" Width="600">

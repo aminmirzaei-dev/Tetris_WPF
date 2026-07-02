@@ -32,6 +32,8 @@ namespace Tetris.Messages
         private void FailureGame_Loaded(object sender, RoutedEventArgs e)
         {
             this.PlaySound();
+            this.DarkMode = ((Tetris.Controls.BaseWindow)this.Owner).DarkMode;
+
         }
 
         private void PlaySound()

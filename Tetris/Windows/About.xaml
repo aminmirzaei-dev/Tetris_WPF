@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:Tetris.Windows"
         xmlns:base="clr-namespace:Tetris.Controls"
         mc:Ignorable="d"
-        DarkMode="True"  
                  WindowMode="Dialog"
         Icon="/Images/Logo/TetrisLogo.png"
         WindowStartupLocation="CenterScreen"

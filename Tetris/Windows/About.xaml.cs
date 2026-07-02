@@ -23,6 +23,12 @@ namespace Tetris.Windows
         public About()
         {
             InitializeComponent();
+            this.Loaded += About_Loaded;
+        }
+
+        private void About_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.DarkMode = ((Tetris.Controls.BaseWindow)this.Owner).DarkMode;
         }
 
         private void GitHubBorder_Click(object sender, MouseButtonEventArgs e) 
