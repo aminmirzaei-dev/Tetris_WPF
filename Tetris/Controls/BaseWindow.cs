@@ -11,11 +11,12 @@ namespace Tetris.Controls
     public class BaseWindow : System.Windows.Window
     {
         public enum WindowModes { Standard, Dialog }
+        public enum WindowLanguages { English, Persian }
         static BaseWindow()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(BaseWindow), new FrameworkPropertyMetadata(typeof(BaseWindow)));
 
-           
+
         }
 
         private WindowChrome windowChrome;
@@ -91,6 +92,19 @@ namespace Tetris.Controls
                 typeof(Tetris.Controls.BaseWindow.WindowModes),
                 typeof(BaseWindow),
                 new PropertyMetadata(Tetris.Controls.BaseWindow.WindowModes.Standard));
+
+        public Tetris.Controls.BaseWindow.WindowLanguages WindowLanguage
+        {
+            get => (Tetris.Controls.BaseWindow.WindowLanguages)GetValue(WindowLanguageProperty);
+            set => SetValue(WindowLanguageProperty, value);
+        }
+
+        public static readonly DependencyProperty WindowLanguageProperty =
+            DependencyProperty.Register(
+                nameof(WindowLanguage),
+                typeof(Tetris.Controls.BaseWindow.WindowLanguages),
+                typeof(BaseWindow),
+                new PropertyMetadata(Tetris.Controls.BaseWindow.WindowLanguages.English));
 
         #region CornerRadius
 

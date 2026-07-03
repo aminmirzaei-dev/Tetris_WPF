@@ -30,7 +30,7 @@
                 <Image Source="/Images/Icons/Next.png" Width="32" Height="32"></Image>
                 <TextBlock VerticalAlignment="Center" Text="NEXT" Margin="5,0,0,0" FontSize="16" FontStyle="Normal"></TextBlock>
             </StackPanel>
-            <Canvas x:Name="nextShapeCanvas" x:FieldModifier="public" HorizontalAlignment="Center" Height="200" VerticalAlignment="Bottom" />
+            <Canvas x:Name="nextShapeCanvas" x:FieldModifier="public" Height="200" Width="200"/>
         </StackPanel>
     </Border>
 </UserControl>
