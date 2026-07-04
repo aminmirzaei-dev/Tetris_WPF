@@ -25,7 +25,7 @@ namespace Tetris.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool DarkMode {
             get {
                 return ((bool)(this["DarkMode"]));
@@ -37,7 +37,7 @@ namespace Tetris.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Persian")]
+        [global::System.Configuration.DefaultSettingValueAttribute("English")]
         public string Language {
             get {
                 return ((string)(this["Language"]));

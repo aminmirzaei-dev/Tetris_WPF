@@ -156,14 +156,14 @@ Height="100" Margin="5,0,0,0"/>
 
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="200"/>
                     </Grid.ColumnDefinitions>
 
-                    <base:GameCheckBox Grid.Column="1"
-                            Margin="10,0,0,0"
-                                       Width="45"
-                                       Height="45"
-                           />
+                    <panels:Options Grid.Column="1">
+                        
+                    </panels:Options>
+
+
                 </Grid>
 
             </Grid>
@@ -197,7 +197,7 @@ Height="100" Margin="5,0,0,0"/>
                 <!-- Scores -->
                 <panels:Stats x:Name="Stats" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" DarkMode="{Binding DarkMode,
                           RelativeSource={RelativeSource AncestorType=local:Main}}">
-                    
+
                 </panels:Stats>
 
                 <!-- Next -->

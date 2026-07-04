@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="DarkMode" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="Language" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Persian</Value>
+      <Value Profile="(Default)">English</Value>
     </Setting>
   </Settings>
 </SettingsFile>

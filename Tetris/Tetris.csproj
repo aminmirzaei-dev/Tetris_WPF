@@ -76,6 +76,9 @@
     <Compile Include="Panels\NextBloc.xaml.cs">
       <DependentUpon>NextBloc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Panels\Options.xaml.cs">
+      <DependentUpon>Options.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Panels\Stats.xaml.cs">
       <DependentUpon>Stats.xaml</DependentUpon>
     </Compile>
@@ -111,6 +114,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Panels\NextBloc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panels\Options.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -720,14 +720,16 @@ DarkMode="{TemplateBinding DarkMode}"/>
                         </Border>
 
                         <!-- Moon Icon -->
-                        <TextBlock x:Name="ThemeIcon"
-           FontSize="18"
-           HorizontalAlignment="Center"
-           VerticalAlignment="Center"
-           TextOptions.TextFormattingMode="Display"
-                                   Foreground="{DynamicResource GameCheckBoxForeground}"
-                                   FontFamily="Segoe Fluent Icons"
-           TextOptions.TextRenderingMode="ClearType"/>
+
+                            <TextBlock x:Name="ThemeIcon"
+FontSize="18"
+HorizontalAlignment="Center"
+VerticalAlignment="Center"
+TextOptions.TextFormattingMode="Display"
+                        Foreground="{DynamicResource GameCheckBoxForeground}"
+                        FontFamily="Segoe Fluent Icons"
+TextOptions.TextRenderingMode="ClearType"/>
+                            <!--Text-->
 
                     </Grid>
 
