@@ -33,6 +33,7 @@ namespace Tetris.Messages
         {
             this.PlaySound();
             this.DarkMode = ((Tetris.Controls.BaseWindow)this.Owner).DarkMode;
+            this.WindowLanguage = ((Tetris.Controls.BaseWindow)this.Owner).WindowLanguage;
 
         }
 

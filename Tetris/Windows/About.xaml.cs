@@ -29,6 +29,7 @@ namespace Tetris.Windows
         private void About_Loaded(object sender, RoutedEventArgs e)
         {
             this.DarkMode = ((Tetris.Controls.BaseWindow)this.Owner).DarkMode;
+            this.WindowLanguage = ((Tetris.Controls.BaseWindow)this.Owner).WindowLanguage;
         }
 
         private void GitHubBorder_Click(object sender, MouseButtonEventArgs e) 

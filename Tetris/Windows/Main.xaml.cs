@@ -27,8 +27,18 @@ namespace Tetris.Windows
             this.GameBoard.StartStopButton = this.btnStartGame;
             this.GameBoard.NextBlocPanel = this.NextBloc;
             this.GameBoard.StatsPanel = this.Stats;
+            this.Loaded += Main_Loaded;
         }
 
+        private void Main_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (Properties.Settings.Default.Language == "English")
+                this.WindowLanguage = WindowLanguages.English;
+            else
+                this.WindowLanguage = WindowLanguages.Persian;
+
+            this.DarkMode = Properties.Settings.Default.DarkMode;
+        }
 
         private void AboutButton_Click(object sender, RoutedEventArgs e)
         {

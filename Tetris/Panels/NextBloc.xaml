@@ -28,7 +28,7 @@
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,0,0">
                 <Image Source="/Images/Icons/Next.png" Width="32" Height="32"></Image>
-                <TextBlock VerticalAlignment="Center" Text="NEXT" Margin="5,0,0,0" FontSize="16" FontStyle="Normal"></TextBlock>
+                <TextBlock VerticalAlignment="Center" x:Name="nextTitle" Text="NEXT" Margin="5,0,0,0" FontSize="16" FontStyle="Normal"></TextBlock>
             </StackPanel>
             <Canvas x:Name="nextShapeCanvas" x:FieldModifier="public" Height="200" Width="200"/>
         </StackPanel>

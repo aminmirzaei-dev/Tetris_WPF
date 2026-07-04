@@ -60,17 +60,43 @@
                     </Ellipse.Fill>
                 </Ellipse>
 
-                <TextBlock Text="Amin Mirzaei"
+                <TextBlock
                            FontSize="34"
                            FontWeight="Bold"
                            Foreground="#1E73E8"
                            HorizontalAlignment="Center"
-                           Margin="0,15,0,0"/>
+                           Margin="0,15,0,0">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Text" Value="Amin Mirzaei"/>
 
-                <TextBlock Text=".Net Developer"
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding WindowLanguage,
+                     RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                    <Setter Property="Text" Value="امین میرزایی"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <TextBlock
                            FontSize="20"
                            Foreground="#8F5BFF"
-                           HorizontalAlignment="Center"/>
+                           HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Text" Value=".Net Developer"/>
+
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding WindowLanguage,
+  RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                    <Setter Property="Text" Value="گسترش دهنده دات نت"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
 
                 <Separator Margin="0,25,0,25"/>
 
@@ -83,10 +109,23 @@
            Width="30"
            Height="30"/>
 
-                        <TextBlock Text="WPF Tech"
+                        <TextBlock
                Margin="12,0,0,0"
                VerticalAlignment="Center"
-               FontSize="18"/>
+               FontSize="18">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Text" Value="WPF Tech"/>
+
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding WindowLanguage,
+  RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                            <Setter Property="Text" Value="فناوری WPF"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
 
                     </StackPanel>
 
@@ -96,10 +135,23 @@
 Width="30"
 Height="30"/>
 
-                        <TextBlock Text=".Net Platform"
+                        <TextBlock
     Margin="12,0,0,0"
     VerticalAlignment="Center"
-    FontSize="18"/>
+    FontSize="18">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Text" Value=".Net Platform"/>
+
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding WindowLanguage,
+  RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                            <Setter Property="Text" Value="سکو .Net"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
 
                     </StackPanel>
 
@@ -109,10 +161,23 @@ Height="30"/>
 Width="30"
 Height="30"/>
 
-                        <TextBlock Text="Csharp Programming"
+                        <TextBlock
     Margin="12,0,0,0"
     VerticalAlignment="Center"
-    FontSize="18"/>
+    FontSize="18">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Text" Value="C# Programming"/>
+
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding WindowLanguage,
+RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                            <Setter Property="Text" Value="برنامه نویسی C#"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
 
                     </StackPanel>
 
@@ -122,10 +187,23 @@ Height="30"/>
 Width="30"
 Height="30"/>
 
-                        <TextBlock Text="MVVM Pattern"
+                        <TextBlock
     Margin="12,0,0,0"
     VerticalAlignment="Center"
-    FontSize="18"/>
+    FontSize="18">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Text" Value="MVVM Pattern"/>
+
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding WindowLanguage,
+RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                            <Setter Property="Text" Value="الگو MVVM"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
 
                     </StackPanel>
 
@@ -234,22 +312,48 @@ Height="80" Margin="0,5,20,0"/>
 
                     </StackPanel>
 
-                    <TextBlock Text="A modern desktop implementation of the classic Tetris game built with WPF and .NET."
+                    <TextBlock
                                FontSize="24"
                                Foreground="#4A5568"
                                Width="800"
                                TextWrapping="Wrap"
-                               Margin="0,10,0,0"/>
+                               Margin="0,10,0,0">
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Text" Value="A modern desktop implementation of the classic Tetris game built with WPF and .NET."/>
+
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding WindowLanguage,
+RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                        <Setter Property="Text" Value="یک پیاده‌سازی نوین دسکتاپ از بازی کلاسیک تتریس که با به کار گیری از WPF و .NET ساخته شده است."/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
 
                 </StackPanel>
 
                 <!-- INFO CARDS -->
                 <StackPanel Grid.Row="2">
 
-                    <TextBlock Text="Develop Info"
+                    <TextBlock
                FontWeight="Bold"
                FontSize="16"
-               Foreground="#008f56"/>
+               Foreground="#008f56">
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Text" Value="Develop Info"/>
+
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding WindowLanguage,
+RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                        <Setter Property="Text" Value="درونداد گسترش"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
 
                     <WrapPanel Margin="0,15,0,0">
 
@@ -268,12 +372,38 @@ Height="80" Margin="0,5,20,0"/>
                        Height="48"/>
 
                                 <StackPanel Margin="10,0,0,0">
-                                    <TextBlock Text="Version"
-                               Foreground="#6B7280"/>
+                                    <TextBlock
+                               Foreground="#6B7280">
+                                        <TextBlock.Style>
+                                            <Style TargetType="{x:Type TextBlock}">
+                                                <Setter Property="Text" Value="Version"/>
 
-                                    <TextBlock Text="Stable 1.0.0"
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding WindowLanguage,
+RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                                        <Setter Property="Text" Value="ویرایش"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+
+                                    <TextBlock
                                FontSize="22"
-                               FontWeight="SemiBold"/>
+                               FontWeight="SemiBold">
+                                        <TextBlock.Style>
+                                            <Style TargetType="{x:Type TextBlock}">
+                                                <Setter Property="Text" Value="Stable 1.0.0"/>
+
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding WindowLanguage,
+RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                                        <Setter Property="Text" Value="پایدار 1.0.0"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
                                 </StackPanel>
 
                             </StackPanel>
@@ -294,12 +424,37 @@ Height="80" Margin="0,5,20,0"/>
                        Height="48"/>
 
                                 <StackPanel Margin="10,0,0,0">
-                                    <TextBlock Text="Build Date"
-                               Foreground="#6B7280"/>
+                                    <TextBlock
+                               Foreground="#6B7280">
+                                        <TextBlock.Style>
+                                            <Style TargetType="{x:Type TextBlock}">
+                                                <Setter Property="Text" Value="Build Date"/>
 
-                                    <TextBlock Text="May 2025"
-                               FontSize="22"
-                               FontWeight="SemiBold"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding WindowLanguage,
+RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                                        <Setter Property="Text" Value="کارنامک ساخت"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+
+                                    <TextBlock
+                                        FontSize="22"
+                               FontWeight="SemiBold">
+                                        <TextBlock.Style>
+                                            <Style TargetType="{x:Type TextBlock}">
+                                                <Setter Property="Text" Value="2026"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding WindowLanguage,
+RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                                        <Setter Property="Text" Value="2585 ایران"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
                                 </StackPanel>
 
                             </StackPanel>
@@ -313,10 +468,22 @@ Height="80" Margin="0,5,20,0"/>
                 <!-- CONNECT -->
                 <StackPanel Grid.Row="4">
 
-                    <TextBlock Text="CONNECT WITH ME"
+                    <TextBlock
                                FontWeight="Bold"
                                FontSize="16"
-                               Foreground="#1E73E8"/>
+                               Foreground="#1E73E8">
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Text" Value="CONNECT WITH ME"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding WindowLanguage,
+RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                        <Setter Property="Text" Value="با من در پیوستگی باشید"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
 
                     <WrapPanel Margin="0,15,0,0">
 
@@ -349,9 +516,21 @@ Height="80" Margin="0,5,20,0"/>
            Height="48"/>
 
                                 <StackPanel Margin="10,0,0,0">
-                                    <TextBlock Text="GitHub"
+                                    <TextBlock
                                                FontSize="20"
-                                               FontWeight="SemiBold"/>
+                                               FontWeight="SemiBold">
+                                        <TextBlock.Style>
+                                            <Style TargetType="{x:Type TextBlock}">
+                                                <Setter Property="Text" Value="Github"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding WindowLanguage,
+RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                                        <Setter Property="Text" Value="گیت هاب"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
                                     <TextBlock Text="aminmirzaei-dev"/>
                                 </StackPanel>
 
@@ -387,9 +566,21 @@ Width="48"
 Height="48"/>
 
                                 <StackPanel Margin="10,0,0,0">
-                                    <TextBlock Text="Instagram"
+                                    <TextBlock
                                                FontSize="20"
-                                               FontWeight="SemiBold"/>
+                                               FontWeight="SemiBold">
+                                        <TextBlock.Style>
+                                            <Style TargetType="{x:Type TextBlock}">
+                                                <Setter Property="Text" Value="Instagram"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding WindowLanguage,
+RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                                        <Setter Property="Text" Value="اینستاگرام"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
                                     <TextBlock Text="aminmirzaei.dev"/>
                                 </StackPanel>
 
@@ -424,9 +615,21 @@ Width="48"
 Height="48"/>
 
                                 <StackPanel Margin="10,0,0,0">
-                                    <TextBlock Text="Gmail"
+                                    <TextBlock
                                                FontSize="20"
-                                               FontWeight="SemiBold"/>
+                                               FontWeight="SemiBold">
+                                        <TextBlock.Style>
+                                            <Style TargetType="{x:Type TextBlock}">
+                                                <Setter Property="Text" Value="Gmail"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding WindowLanguage,
+RelativeSource={RelativeSource AncestorType=local:About}}" Value="Persian">
+                                                        <Setter Property="Text" Value="رایانامه"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
                                     <TextBlock Text="aminmirzaeidev@gmail.com"/>
                                 </StackPanel>
 

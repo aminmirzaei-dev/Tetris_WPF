@@ -13,10 +13,49 @@ Icon="/Images/Logo/TetrisLogo.png"
     <Grid>
         <StackPanel Orientation="Vertical">
             <Image Margin="0,20,0,0" Width="100" Height="100" Source="/Images/Icons/Failure.png"></Image>
-            <TextBlock VerticalAlignment="Center" Margin="0,10,0,0" HorizontalAlignment="Center" FontSize="30" Foreground="Crimson" Text="Unfortunately, you lost the game."></TextBlock>
+            <TextBlock VerticalAlignment="Center" Margin="0,10,0,0" HorizontalAlignment="Center" FontSize="20" Foreground="Crimson">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Text" Value="Unfortunately, you lost the game."/>
+
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding WindowLanguage,
+                     RelativeSource={RelativeSource AncestorType=local:FailureGame}}" Value="Persian">
+                                <Setter Property="Text" Value="شوربختانه، شما بازی را باختید"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,50,0,0">
-                <base:GameButton Click="RestartButton_Click" Icon="" IconSize="14" Margin="0,0,5,0" Background="SlateBlue" Content="Restart" Width="150" Height="50"></base:GameButton>
-                <base:GameButton Click="OkButton_Click" Icon="" IconSize="14" Margin="0,0,10,0" Background="DodgerBlue" Content="Ok" Width="100" Height="50"></base:GameButton>
+                <base:GameButton Click="RestartButton_Click" Icon="" IconSize="14" Margin="0,0,5,0" Background="SlateBlue" Width="150" Height="50">
+                    <base:GameButton.Style>
+                        <Style TargetType="{x:Type base:GameButton}">
+                            <Setter Property="Content" Value="Restart"/>
+
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding WindowLanguage,
+                     RelativeSource={RelativeSource AncestorType=local:FailureGame}}" Value="Persian">
+                                    <Setter Property="Content" Value="از نو"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </base:GameButton.Style>
+                </base:GameButton>
+                <base:GameButton Click="OkButton_Click" Icon="" IconSize="14" Margin="0,0,10,0" Background="DodgerBlue" Width="100" Height="50">
+                    <base:GameButton.Style>
+                        <Style TargetType="{x:Type base:GameButton}">
+                            <Setter Property="Content" Value="Ok"/>
+
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding WindowLanguage,
+   RelativeSource={RelativeSource AncestorType=local:FailureGame}}" Value="Persian">
+                                    <Setter Property="Content" Value="باشه"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </base:GameButton.Style>
+                </base:GameButton>
             </StackPanel>
         </StackPanel>
     </Grid>

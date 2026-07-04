@@ -23,6 +23,16 @@ namespace Tetris.Panels
         public NextBloc()
         {
             InitializeComponent();
+            this.Loaded += NextBloc_Loaded;
+        }
+
+        private void NextBloc_Loaded(object sender, RoutedEventArgs e)
+        {
+            var window = Window.GetWindow(this);
+            if (((Tetris.Controls.BaseWindow)window).WindowLanguage == Tetris.Controls.BaseWindow.WindowLanguages.English)
+                this.nextTitle.Text = "NEXT";
+            else
+                this.nextTitle.Text = "پسین";
         }
 
         public static readonly DependencyProperty DarkModeProperty =

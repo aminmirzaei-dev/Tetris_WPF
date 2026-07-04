@@ -29,7 +29,7 @@
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,0,0">
                     <Image Source="/Images/Icons/Score.png" Width="32" Height="32"></Image>
-                    <TextBlock VerticalAlignment="Center" Text="SCORE" Margin="5,0,0,0" FontSize="16" FontStyle="Normal"></TextBlock>
+                    <TextBlock VerticalAlignment="Center" x:Name="scoreTitle" Text="SCORE" Margin="5,0,0,0" FontSize="16" FontStyle="Normal"></TextBlock>
                 </StackPanel>
                 <TextBlock x:Name="scoreTextBlock" x:FieldModifier="public" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="26" FontStyle="Normal"></TextBlock>
             </StackPanel>
@@ -40,7 +40,7 @@
             <StackPanel Orientation="Vertical" Margin="0,5,0,0">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,0,0">
                     <Image Source="/Images/Icons/Level.png" Width="32" Height="32"></Image>
-                    <TextBlock VerticalAlignment="Center" Text="LEVEL" Margin="5,0,0,0" FontSize="16" FontStyle="Normal"></TextBlock>
+                    <TextBlock VerticalAlignment="Center" x:Name="levelTitle" Text="LEVEL" Margin="5,0,0,0" FontSize="16" FontStyle="Normal"></TextBlock>
                 </StackPanel>
                 <TextBlock x:Name="levelTextBlock" x:FieldModifier="public" Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="26" FontStyle="Normal"></TextBlock>
             </StackPanel>

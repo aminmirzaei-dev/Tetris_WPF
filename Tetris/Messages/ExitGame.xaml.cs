@@ -28,6 +28,7 @@ namespace Tetris.Messages
         private void ExitGame_Loaded(object sender, RoutedEventArgs e)
         {
             this.DarkMode = ((Tetris.Controls.BaseWindow)this.Owner).DarkMode;
+            this.WindowLanguage = ((Tetris.Controls.BaseWindow)this.Owner).WindowLanguage;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

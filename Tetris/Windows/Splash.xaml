@@ -33,12 +33,12 @@
         <!-- تصویر پس زمینه -->
         <Border CornerRadius="5">
             <Border.Background>
-                <ImageBrush ImageSource="/Images/Splash/TetrisSplashEN.png"
+                <ImageBrush x:Name="backgroundImage"
                         Stretch="Fill"/>
             </Border.Background>
         </Border>
         <controls:SplashProgressBar
-            x:Name="LoadingProgress"
+            x:Name="loadingProgress"
     Height="8"
     VerticalAlignment="Bottom"
     HorizontalAlignment="Stretch"

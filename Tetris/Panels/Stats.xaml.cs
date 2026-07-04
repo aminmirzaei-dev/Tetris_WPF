@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Tetris.Controls;
 
 namespace Tetris.Panels
 {
@@ -24,6 +11,22 @@ namespace Tetris.Panels
         public Stats()
         {
             InitializeComponent();
+            this.Loaded += Stats_Loaded;
+        }
+
+        private void Stats_Loaded(object sender, RoutedEventArgs e)
+        {
+            var window = Window.GetWindow(this);
+            if (((Tetris.Controls.BaseWindow)window).WindowLanguage == Tetris.Controls.BaseWindow.WindowLanguages.English)
+            {
+                this.scoreTitle.Text = "SCORE";
+                this.levelTitle.Text = "LEVEL";
+            }
+            else
+            {
+                this.scoreTitle.Text = "شمار";
+                this.levelTitle.Text = "رده";
+            }
         }
 
         public static readonly DependencyProperty DarkModeProperty =
@@ -35,5 +38,7 @@ namespace Tetris.Panels
             get => (bool)GetValue(DarkModeProperty);
             set => SetValue(DarkModeProperty, value);
         }
+
+
     }
 }

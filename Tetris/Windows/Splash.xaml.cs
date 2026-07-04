@@ -43,7 +43,7 @@ namespace Tetris.Windows
 
                 BeginAnimation(OpacityProperty, fade);
             };
-            Loaded += SplashWindow_Loaded;
+            this.Loaded += SplashWindow_Loaded;
         }
 
         private void SplashWindow_Loaded(object sender, RoutedEventArgs e)
@@ -51,18 +51,29 @@ namespace Tetris.Windows
             this.loadingTimer = new DispatcherTimer();
             this.loadingTimer.Interval = TimeSpan.FromMilliseconds(20);
             this.PlaySound();
-           
+
+            if (Properties.Settings.Default.Language == "English")
+            {
+                this.backgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Images/Splash/TetrisSplashEN.png"));
+                this.loadingProgress.IsReversed = false;
+            }
+            else
+            {
+                this.backgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Images/Splash/TetrisSplashFA.png"));
+                this.loadingProgress.IsReversed = true;
+            }
+
             this.loadingTimer.Tick += (s, args) =>
             {
-                this.LoadingProgress.Value += 1;
+                this.loadingProgress.Value += 1;
 
-                if (this.LoadingProgress.Value >= 100)
+                if (this.loadingProgress.Value >= 100)
                 {
-                    this.LoadingProgress.Value = 100;
+                    this.loadingProgress.Value = 100;
                     this.loadingTimer.Stop();
 
-                    Tetris.Windows.About about = new Tetris.Windows.About();
-                    about.Show();
+                    Tetris.Windows.Main main = new Tetris.Windows.Main();
+                    main.Show();
                     this.Close();
 
                 }

@@ -6,7 +6,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Language" Type="System.String" Scope="User">
-      <Value Profile="(Default)">English</Value>
+      <Value Profile="(Default)">Persian</Value>
     </Setting>
   </Settings>
 </SettingsFile>
