@@ -12,7 +12,7 @@
                  WindowStartupLocation="CenterScreen"
                  WindowMode="Dialog"
         mc:Ignorable="d"
-        Title=" Tetris Game" Height="650" Width="750">
+        Title=" Tetris Game" Height="700" Width="750">
     <Grid>
 
         <!-- Main Columns -->
@@ -82,7 +82,7 @@ Height="100" Margin="5,0,0,0"/>
 
                 <!-- Buttons -->
                 <StackPanel Grid.Row="1"
-                            VerticalAlignment="Center">
+                            VerticalAlignment="Center" Margin="0,20,0,0">
 
                     <base:GameButton x:Name="btnStartGame"
                             Height="80"
@@ -202,7 +202,7 @@ Height="100" Margin="5,0,0,0"/>
                 </panels:Stats>
 
                 <!-- Next -->
-                <panels:NextBloc x:Name="NextBloc" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="2"
+                <panels:NextBloc x:Name="NextBloc" Height="200" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="2"
                         Margin="0,5,0,0" DarkMode="{Binding DarkMode,
                           RelativeSource={RelativeSource AncestorType=local:Main}}">
 

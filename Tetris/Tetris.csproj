@@ -223,6 +223,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Icons\Options.png" />
+    <Resource Include="Images\Icons\EnglishLan.png" />
+    <Resource Include="Images\Icons\icons8-gear-32.png" />
+    <Resource Include="Images\Icons\Moon.png" />
+    <Resource Include="Images\Icons\SoundOff.png" />
+    <Resource Include="Images\Icons\SoundOn.png" />
+    <Resource Include="Images\Icons\Sun.png" />
     <Content Include="Sounds\Collided.wav" />
     <Content Include="Sounds\DeleteLine.wav" />
   </ItemGroup>

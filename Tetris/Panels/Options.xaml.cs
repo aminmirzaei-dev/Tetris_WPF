@@ -23,6 +23,26 @@ namespace Tetris.Panels
         public Options()
         {
             InitializeComponent();
+            this.Loaded += Options_Loaded;
+        }
+
+        private void Options_Loaded(object sender, RoutedEventArgs e)
+        {
+            var window = Window.GetWindow(this);
+            if (((Tetris.Controls.BaseWindow)window).WindowLanguage == Tetris.Controls.BaseWindow.WindowLanguages.English)
+            {
+                this.optionsTitle.Text = "OPTIONS";
+                this.cbTheme.ToolTip = "Change Theme";
+                this.cbSound.ToolTip = "Change Sound";
+                this.cbLanguage.ToolTip = "Change Language";
+            }
+            else
+            {
+                this.optionsTitle.Text = "گزینه ها";
+                this.cbTheme.ToolTip = "دگراندن پوسته بازی";
+                this.cbSound.ToolTip = "دگراندن آوا بازی";
+                this.cbLanguage.ToolTip = "دگراندن زبان بازی";
+            }
         }
 
         public static readonly DependencyProperty DarkModeProperty =

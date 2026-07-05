@@ -721,13 +721,12 @@ DarkMode="{TemplateBinding DarkMode}"/>
 
                         <!-- Moon Icon -->
 
-                            <TextBlock x:Name="ThemeIcon"
-FontSize="18"
+                            <Image x:Name="ThemeIcon"
 HorizontalAlignment="Center"
 VerticalAlignment="Center"
+                                   Width="40"
+                                   Height="40"
 TextOptions.TextFormattingMode="Display"
-                        Foreground="{DynamicResource GameCheckBoxForeground}"
-                        FontFamily="Segoe Fluent Icons"
 TextOptions.TextRenderingMode="ClearType"/>
                             <!--Text-->
 
@@ -792,8 +791,8 @@ TextOptions.TextRenderingMode="ClearType"/>
             Value="{DynamicResource GameCheckBoxDarkBorder}"/>
 
                             <Setter TargetName="ThemeIcon"
-            Property="Text"
-            Value=""/>
+            Property="Source"
+            Value="/Images/Icons/Moon.png"/>
 
                         </Trigger>
 
@@ -811,8 +810,8 @@ TextOptions.TextRenderingMode="ClearType"/>
             Value="{DynamicResource GameCheckBoxLightBorder}"/>
 
                             <Setter TargetName="ThemeIcon"
-            Property="Text"
-            Value=""/>
+            Property="Source"
+            Value="/Images/Icons/Sun.png"/>
 
                         </Trigger>
 
