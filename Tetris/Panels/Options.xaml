@@ -7,23 +7,46 @@
              xmlns:base="clr-namespace:Tetris.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Border Grid.Column="1" BorderBrush="{DynamicResource TetrisPurple}" CornerRadius="25" BorderThickness="2" Width="180" Height="70">
-        <StackPanel Orientation="Horizontal">
-            <base:GameCheckBox
+    <Border Grid.Column="1" BorderBrush="{DynamicResource TetrisPurple}" CornerRadius="20" BorderThickness="2" Width="180" Height="70">
+        <Border.Style>
+            <Style TargetType="Border">
+                <Setter Property="Background" Value="{DynamicResource PanelLightBackground}"/>
+
+                <Style.Triggers>
+                    <DataTrigger
+    Binding="{Binding DarkMode,
+                      RelativeSource={RelativeSource AncestorType=local:Options}}"
+    Value="True">
+                        <Setter Property="Background" Value="{DynamicResource PanelDarkBackground}"/>
+                    </DataTrigger>
+                </Style.Triggers>
+
+            </Style>
+        </Border.Style>
+
+        <StackPanel Orientation="Vertical">
+            
+            <StackPanel Orientation="Horizontal">
+                <base:GameCheckBox
+                x:Name="cbTheme"
  Margin="10,0,0,0"
             Width="45"
             Height="45"
 />
-            <base:GameCheckBox
+                <base:GameCheckBox
+                x:Name="cbSound"
  Margin="10,0,0,0"
             Width="45"
             Height="45"
 />
-            <base:GameCheckBox
+                <base:GameCheckBox
+                x:Name="cbLanguage"
  Margin="10,0,0,0"
             Width="45"
             Height="45"
 />
+            </StackPanel>
         </StackPanel>
+        
     </Border>
 </UserControl>

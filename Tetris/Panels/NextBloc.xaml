@@ -25,6 +25,7 @@
         </Border.Style>
         
         
+        
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,0,0">
                 <Image Source="/Images/Icons/Next.png" Width="32" Height="32"></Image>

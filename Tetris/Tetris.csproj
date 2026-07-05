@@ -222,6 +222,7 @@
     <Resource Include="Images\Icons\Score.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\Icons\Options.png" />
     <Content Include="Sounds\Collided.wav" />
     <Content Include="Sounds\DeleteLine.wav" />
   </ItemGroup>
