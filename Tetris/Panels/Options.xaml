@@ -41,6 +41,8 @@
                     BackColorOff="White"
                     IconOn="/Images/Icons/Moon.png"
                     IconOff="/Images/Icons/Sun.png"
+                    Checked="cbTheme_Checked"
+                    Unchecked="cbTheme_Unchecked"
                     
                     
 />
@@ -63,6 +65,8 @@
 BackColorOff="White"
 IconOn="/Images/Icons/PersianLan.png"
 IconOff="/Images/Icons/EnglishLan.png"
+                    Checked="cbLanguage_Checked"
+                    Unchecked="cbLanguage_Unchecked"
 />
             </StackPanel>
         </StackPanel>

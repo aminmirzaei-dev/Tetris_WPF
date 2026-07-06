@@ -26,10 +26,12 @@ namespace Tetris.Panels
             this.Loaded += Options_Loaded;
         }
 
+        System.Windows.Window window;
+
         private void Options_Loaded(object sender, RoutedEventArgs e)
         {
-            var window = Window.GetWindow(this);
-            if (((Tetris.Controls.BaseWindow)window).WindowLanguage == Tetris.Controls.BaseWindow.WindowLanguages.English)
+            this.window = Window.GetWindow(this);
+            if (((Tetris.Controls.BaseWindow)this.window).WindowLanguage == Tetris.Controls.BaseWindow.WindowLanguages.English)
             {
                 this.optionsTitle.Text = "OPTIONS";
                 this.cbTheme.ToolTip = "Change Theme";
@@ -55,5 +57,27 @@ DependencyProperty.Register(nameof(DarkMode), typeof(bool),
             set => SetValue(DarkModeProperty, value);
         }
 
+        private void cbTheme_Checked(object sender, RoutedEventArgs e)
+        {
+                ((Tetris.Controls.BaseWindow)this.window).DarkMode = true;
+            
+        }
+
+        private void cbTheme_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ((Tetris.Controls.BaseWindow)this.window).DarkMode = false;
+
+        }
+
+        private void cbLanguage_Checked(object sender, RoutedEventArgs e)
+        {
+            ((Tetris.Controls.BaseWindow)this.window).WindowLanguage = Controls.BaseWindow.WindowLanguages.Persian;
+
+        }
+
+        private void cbLanguage_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ((Tetris.Controls.BaseWindow)this.window).WindowLanguage = Controls.BaseWindow.WindowLanguages.English;
+        }
     }
 }

@@ -139,6 +139,18 @@ namespace Tetris.Controls
 
         #endregion
 
+        public bool SoundEnable
+        {
+            get => (bool)GetValue(SoundEnableProperty);
+            set => SetValue(SoundEnableProperty, value);
+        }
+        public static readonly DependencyProperty SoundEnableProperty =
+            DependencyProperty.Register(
+                nameof(SoundEnable),
+                typeof(bool),
+                typeof(BaseWindow),
+                new PropertyMetadata(true));
+
         private void TitleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ClickCount == 2)
