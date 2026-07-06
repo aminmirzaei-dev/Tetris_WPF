@@ -79,5 +79,15 @@ DependencyProperty.Register(nameof(DarkMode), typeof(bool),
         {
             ((Tetris.Controls.BaseWindow)this.window).WindowLanguage = Controls.BaseWindow.WindowLanguages.English;
         }
+
+        private void cbSound_Checked(object sender, RoutedEventArgs e)
+        {
+            ((Tetris.Controls.BaseWindow)this.window).SoundEnable = false;
+        }
+
+        private void cbSound_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ((Tetris.Controls.BaseWindow)this.window).SoundEnable = true;
+        }
     }
 }

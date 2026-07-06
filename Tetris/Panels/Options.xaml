@@ -53,8 +53,10 @@
             Height="45"
                      BackColorOn="Black"
  BackColorOff="White"
- IconOn="/Images/Icons/SoundOn.png"
- IconOff="/Images/Icons/SoundOff.png"
+ IconOn="/Images/Icons/SoundOff.png"
+ IconOff="/Images/Icons/SoundOn.png"
+                    Checked="cbSound_Checked"
+                    Unchecked="cbSound_Unchecked"
 />
                 <base:GameCheckBox
                 x:Name="cbLanguage"

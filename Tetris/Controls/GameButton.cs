@@ -21,25 +21,37 @@ namespace Tetris.Controls
         static GameButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(GameButton), new FrameworkPropertyMetadata(typeof(GameButton)));
-           
+
             BackgroundProperty.OverrideMetadata(
         typeof(GameButton),
         new FrameworkPropertyMetadata(
             Brushes.LimeGreen,
             OnBackgroundChanged));
 
-            
+
 
         }
 
         public GameButton()
         {
             this.Click += this.GameButton_Clicked;
+            this.Loaded += GameButton_Loaded;
         }
+
+        System.Windows.Window window;
+
+
+        private void GameButton_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.window = Window.GetWindow(this);
+        }
+
 
         private void GameButton_Clicked(object sender, RoutedEventArgs e)
         {
-            this.PlaySound();
+
+            if (((Tetris.Controls.BaseWindow)this.window).SoundEnable == true)
+                this.PlaySound();
         }
 
         private void PlaySound()
@@ -52,7 +64,7 @@ namespace Tetris.Controls
             }
         }
 
-        
+
 
         public static readonly DependencyProperty IconProperty =
         DependencyProperty.Register(nameof(Icon), typeof(string),
@@ -133,7 +145,7 @@ namespace Tetris.Controls
                 return;
 
             SolidColorBrush brush = e.NewValue as SolidColorBrush;
-            if (brush==null)
+            if (brush == null)
                 return;
 
             Color color = brush.Color;

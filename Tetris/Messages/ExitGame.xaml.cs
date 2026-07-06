@@ -29,6 +29,7 @@ namespace Tetris.Messages
         {
             this.DarkMode = ((Tetris.Controls.BaseWindow)this.Owner).DarkMode;
             this.WindowLanguage = ((Tetris.Controls.BaseWindow)this.Owner).WindowLanguage;
+            this.SoundEnable = ((Tetris.Controls.BaseWindow)this.Owner).SoundEnable;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
