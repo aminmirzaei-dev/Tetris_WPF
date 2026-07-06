@@ -37,6 +37,11 @@
  Margin="10,0,0,0"
             Width="45"
             Height="45"
+                    BackColorOn="Black"
+                    BackColorOff="White"
+                    IconOn="/Images/Icons/Moon.png"
+                    IconOff="/Images/Icons/Sun.png"
+                    
                     
 />
                 <base:GameCheckBox
@@ -44,12 +49,20 @@
  Margin="10,0,0,0"
             Width="45"
             Height="45"
+                     BackColorOn="Black"
+ BackColorOff="White"
+ IconOn="/Images/Icons/SoundOn.png"
+ IconOff="/Images/Icons/SoundOff.png"
 />
                 <base:GameCheckBox
                 x:Name="cbLanguage"
  Margin="10,0,0,0"
             Width="45"
             Height="45"
+                                        BackColorOn="Black"
+BackColorOff="White"
+IconOn="/Images/Icons/PersianLan.png"
+IconOff="/Images/Icons/EnglishLan.png"
 />
             </StackPanel>
         </StackPanel>

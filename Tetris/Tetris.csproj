@@ -229,6 +229,7 @@
     <Resource Include="Images\Icons\SoundOff.png" />
     <Resource Include="Images\Icons\SoundOn.png" />
     <Resource Include="Images\Icons\Sun.png" />
+    <Resource Include="Images\Icons\PersianLan.png" />
     <Content Include="Sounds\Collided.wav" />
     <Content Include="Sounds\DeleteLine.wav" />
   </ItemGroup>

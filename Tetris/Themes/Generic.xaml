@@ -724,8 +724,8 @@ DarkMode="{TemplateBinding DarkMode}"/>
                             <Image x:Name="ThemeIcon"
 HorizontalAlignment="Center"
 VerticalAlignment="Center"
-                                   Width="40"
-                                   Height="40"
+                                   Width="36"
+                                   Height="36"
 TextOptions.TextFormattingMode="Display"
 TextOptions.TextRenderingMode="ClearType"/>
                             <!--Text-->
@@ -777,22 +777,25 @@ TextOptions.TextRenderingMode="ClearType"/>
 
                         </Trigger>
 
-                        <!-- Dark Mode -->
+                        <!-- Checked -->
 
                         <Trigger Property="IsChecked"
          Value="True">
 
                             <Setter TargetName="Root"
             Property="Background"
-            Value="{DynamicResource GameCheckBoxDarkBackground}"/>
+            Value="{Binding BackColorOn,
+                                      RelativeSource={RelativeSource AncestorType=local:GameCheckBox}}"/>
 
                             <Setter TargetName="Root"
             Property="BorderBrush"
-            Value="{DynamicResource GameCheckBoxDarkBorder}"/>
+            Value="{Binding BorderColorOn,
+                                      RelativeSource={RelativeSource AncestorType=local:GameCheckBox}}"/>
 
                             <Setter TargetName="ThemeIcon"
             Property="Source"
-            Value="/Images/Icons/Moon.png"/>
+            Value="{Binding IconOn,
+                                      RelativeSource={RelativeSource AncestorType=local:GameCheckBox}}"/>
 
                         </Trigger>
 
@@ -803,15 +806,18 @@ TextOptions.TextRenderingMode="ClearType"/>
 
                             <Setter TargetName="Root"
             Property="Background"
-            Value="{DynamicResource GameCheckBoxLightBackground}"/>
+            Value="{Binding BackColorOff,
+                                      RelativeSource={RelativeSource AncestorType=local:GameCheckBox}}"/>
 
                             <Setter TargetName="Root"
             Property="BorderBrush"
-            Value="{DynamicResource GameCheckBoxLightBorder}"/>
+            Value="{Binding BorderColorOff,
+                                      RelativeSource={RelativeSource AncestorType=local:GameCheckBox}}"/>
 
                             <Setter TargetName="ThemeIcon"
             Property="Source"
-            Value="/Images/Icons/Sun.png"/>
+            Value="{Binding IconOff,
+                                      RelativeSource={RelativeSource AncestorType=local:GameCheckBox}}"/>
 
                         </Trigger>
 
