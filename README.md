@@ -1,7 +1,7 @@
 # Tetris
 
 <h2> 👨‍💻 About Project</h2>
-Simple Tetris game built in WPF<br />
+A simple Tetris game with an attractive user interface, built using WPF.<br />
 
 <h2> ⭐ Features</h2>
 - With color blocks<br />
