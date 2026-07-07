@@ -172,7 +172,6 @@ namespace Tetris.Panels
             this.shapeRandom = new Random();
             this.currentShapeNumber = shapeRandom.Next(1, 8);
             this.nextShapeNumber = shapeRandom.Next(1, 8);
-            //this.nextTxt.Visibility = levelTxt.Visibility = GameOverTxt.Visibility = Visibility.Collapsed;
             // Add the 2 wav sound in list
            
         }
@@ -195,13 +194,13 @@ namespace Tetris.Panels
             if(this.StartStopButton != null)
                 this.StartStopButton.Click += this.StartStopButton_Click;
 
-            System.Windows.Resources.StreamResourceInfo collidedSoundResource = Application.GetResourceStream(new Uri("Sounds/Collided.wav", UriKind.Relative));
-            System.Windows.Resources.StreamResourceInfo deleteLineSoundResource = Application.GetResourceStream(new Uri("Sounds/DeleteLine.wav", UriKind.Relative));
-            if (collidedSoundResource != null && deleteLineSoundResource != null)
-            {
-                this.soundList.Add(new SoundPlayer(collidedSoundResource.Stream));
-                this.soundList.Add(new SoundPlayer(deleteLineSoundResource.Stream));
-            }
+            //System.Windows.Resources.StreamResourceInfo collidedSoundResource = Application.GetResourceStream(new Uri("Sounds/Collided.wav", UriKind.Relative));
+            //System.Windows.Resources.StreamResourceInfo deleteLineSoundResource = Application.GetResourceStream(new Uri("Sounds/DeleteLine.wav", UriKind.Relative));
+            //if (collidedSoundResource != null)
+           // {
+                //this.soundList.Add(new SoundPlayer(collidedSoundResource.Stream));
+                //this.soundList.Add(new SoundPlayer(deleteLineSoundResource.Stream));
+            //}
 
         }
 
@@ -309,13 +308,11 @@ namespace Tetris.Panels
             {
                 tetrisGrid.Children.Clear();
                 this.NextBlocPanel.nextShapeCanvas.Children.Clear();
-                //GameOverTxt.Visibility = Visibility.Collapsed;
                 isGameOver = false;
             }
             if (!timer.IsEnabled)
             {
                 if (!gameActive) { this.StatsPanel.scoreTextBlock.Text = "0"; leftPos = 3; this.AddShape(this.currentShapeNumber, leftPos); }
-                //nextTxt.Visibility = levelTxt.Visibility = Visibility.Visible;
                 this.StatsPanel.levelTextBlock.Text = gameLevel.ToString();
                 timer.Start();
                 this.StartStopButton.Content = "Stop";
@@ -696,7 +693,7 @@ namespace Tetris.Panels
         // Play sound. index=0 is for collided.wav and index=1 for deleteLine.wav
         private void playSound(int index)
         {
-            //soundList[index].Play();
+           
         }
 
     }

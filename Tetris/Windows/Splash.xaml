@@ -36,6 +36,10 @@
                 <ImageBrush x:Name="backgroundImage"
                         Stretch="Fill"/>
             </Border.Background>
+
+            <TextBlock x:Name="lblVersionWarning" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="Black" FontSize="18" Text="This version is under development and experimental.">
+                
+            </TextBlock>
         </Border>
         <controls:SplashProgressBar
             x:Name="loadingProgress"

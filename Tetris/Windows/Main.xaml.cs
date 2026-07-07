@@ -30,6 +30,15 @@ namespace Tetris.Windows
             this.Loaded += Main_Loaded;
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            Tetris.Properties.Settings.Default.DarkMode = this.DarkMode;
+            Tetris.Properties.Settings.Default.SoundEnable = this.SoundEnable;
+            Tetris.Properties.Settings.Default.Language = Convert.ToString(this.WindowLanguage);
+            Tetris.Properties.Settings.Default.Save();
+        }
+
         private void Main_Loaded(object sender, RoutedEventArgs e)
         {
             if (Properties.Settings.Default.Language == "English")
@@ -38,6 +47,11 @@ namespace Tetris.Windows
                 this.WindowLanguage = WindowLanguages.Persian;
 
             this.DarkMode = Properties.Settings.Default.DarkMode;
+            this.SoundEnable = Properties.Settings.Default.SoundEnable;
+
+
+
+
         }
 
         private void AboutButton_Click(object sender, RoutedEventArgs e)
@@ -47,7 +61,7 @@ namespace Tetris.Windows
             about.ShowDialog();
         }
 
-        private void ExitButton_Click(object sender , RoutedEventArgs e)
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             Tetris.Messages.ExitGame exitGameMessage = new Messages.ExitGame();
             exitGameMessage.Owner = this;

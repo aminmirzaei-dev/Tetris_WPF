@@ -50,17 +50,22 @@ namespace Tetris.Windows
         {
             this.loadingTimer = new DispatcherTimer();
             this.loadingTimer.Interval = TimeSpan.FromMilliseconds(20);
-            this.PlaySound();
+
+            if (Tetris.Properties.Settings.Default.SoundEnable)
+                this.PlaySound();
 
             if (Properties.Settings.Default.Language == "English")
             {
                 this.backgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Images/Splash/TetrisSplashEN.png"));
                 this.loadingProgress.IsReversed = false;
+                this.lblVersionWarning.HorizontalAlignment = HorizontalAlignment.Right;
             }
             else
             {
                 this.backgroundImage.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Images/Splash/TetrisSplashFA.png"));
                 this.loadingProgress.IsReversed = true;
+                this.lblVersionWarning.HorizontalAlignment = HorizontalAlignment.Left;
+
             }
 
             this.loadingTimer.Tick += (s, args) =>

@@ -45,6 +45,19 @@ namespace Tetris.Panels
                 this.cbSound.ToolTip = "دگراندن آوا بازی";
                 this.cbLanguage.ToolTip = "دگراندن زبان بازی";
             }
+
+            this.cbSound.IsChecked = !((Tetris.Controls.BaseWindow)this.window).SoundEnable;
+            this.cbTheme.IsChecked = ((Tetris.Controls.BaseWindow)this.window).DarkMode;
+
+            if (((Tetris.Controls.BaseWindow)this.window).WindowLanguage == Controls.BaseWindow.WindowLanguages.English)
+            {
+                this.cbLanguage.IsChecked = false;
+            }
+            else
+            {
+                this.cbLanguage.IsChecked = true;
+            }
+
         }
 
         public static readonly DependencyProperty DarkModeProperty =
@@ -59,8 +72,8 @@ DependencyProperty.Register(nameof(DarkMode), typeof(bool),
 
         private void cbTheme_Checked(object sender, RoutedEventArgs e)
         {
-                ((Tetris.Controls.BaseWindow)this.window).DarkMode = true;
-            
+            ((Tetris.Controls.BaseWindow)this.window).DarkMode = true;
+
         }
 
         private void cbTheme_Unchecked(object sender, RoutedEventArgs e)
